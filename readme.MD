@@ -8,5 +8,18 @@ En nuestro store van a poder conseguir los siguientes tipos de productos:
 ## Productos de industria musical K-music
 ## Un apartado de Productos internacionales de diferentes paises U-store
 
+
+Sitios de referencia:
+https://www.wishtrend.com/
+https://www.japonshop.com/corea
+http://alimentacioncoreana.com/
+https://www.bando.com/
+https://sokoglam.com/
+https://www.cosmeticoskorea.com/es/
+https://www.mercadolibre.com.ar/
+https://www.shoprachelburke.com/
+
+
+
 Made by  mfcaldao, lisernia, xMilla
 
