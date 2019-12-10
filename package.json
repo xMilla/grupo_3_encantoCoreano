@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/xMilla/grupo_3_encantoCoreano/issues"
   },
-  "homepage": "https://github.com/xMilla/grupo_3_encantoCoreano#readme"
+  "homepage": "https://github.com/xMilla/grupo_3_encantoCoreano#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
