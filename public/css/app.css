@@ -1,4 +1,4 @@
-* {
+/** {
   box-sizing: border-box;
 }
 
@@ -6,3 +6,11 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+ color: coral;
+}
+
+.navbar-brand{
+  background-color: coral;
+ }*/
