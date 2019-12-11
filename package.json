@@ -1,22 +1,17 @@
 {
-  "name": "grupo_3_encantocoreano",
-  "version": "1.0.0",
-  "description": "Este proyecto esta orientado a todas las personas interesadas en la cultura y los productos coreanos, y expandirnos un poco mas con productos de otros paises del mundo.",
-  "main": "index.js",
+  "name": "baseapphtml",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./src/bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xMilla/grupo_3_encantoCoreano.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xMilla/grupo_3_encantoCoreano/issues"
-  },
-  "homepage": "https://github.com/xMilla/grupo_3_encantoCoreano#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.1"
   }
 }
