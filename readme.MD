@@ -36,9 +36,11 @@ https://sokoglam.com/
 https://marvelapp.com/200je5gg
 
 
+### Trello ###
 
+https://trello.com/b/zOogMf2z/proyecto-dh
 
 
 #### Made by ####
-mfcaldao, lisernia, xMilla
+##### mfcaldao, lisernia, xMilla #####
 
