@@ -1,16 +1,68 @@
-/** {
+*{
   box-sizing: border-box;
+  font-family: Berlin Sans FB;
 }
 
-body {
-  margin: 0;
-  font-family: sans-serif;
+.ppl{
+  
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-light{
- color: coral;
+.navbar{
+  background-color:#fbf1fb6e;
 }
 
-.navbar-brand{
-  background-color: coral;
- }*/
+.contenedor-menu {  
+  padding-top: 5%;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+button, 
+input{
+  font: 300 11px Berlin Sans FB;
+}
+
+
+ button{
+   border-radius: 2px;
+   color: white;
+   background-color: plum;
+ }
+
+ .navbar-button{
+   background-color:#f3dff3;
+   
+ }
+
+ .searchLogin{
+  
+ }
+
+ .search{
+  margin-top: 10px;
+  margin-bottom: 10px;
+ }
+
+ .login{
+   margin-bottom: 20px;
+ }
+
+ .img-user{
+   width: 20%;
+   margin-top: 15%;
+   margin-left: 40%;
+   margin-bottom: 10%;
+   align-items: center;
+   justify-content: center;
+ }
+
+ a{
+   text-decoration: none;
+ }
+
+
+ @font-face {
+  font-family: Berlin Sans FB;
+  src: url(../../fonts/BRLNSR.woff);
+  }
+ 
