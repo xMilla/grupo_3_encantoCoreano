@@ -121,7 +121,7 @@ button{
   @media(min-width: 768px){
     .contenedor-menu {  
       margin-top: 30px;
-      margin-left: -30 %;
+      margin-left: -30%;
       font-size: 10px;
     }
     
@@ -158,8 +158,8 @@ button{
         }
         
         .img-user{
-           width: 50%;
-           margin: 20% 5% 5% 5%;
+           width: 30%;
+           margin: 40% 5% 15% 20%;
            padding-left: 0%;
          }
          
@@ -202,3 +202,4 @@ button{
       font-size: 30px;
     }
   }
+}
