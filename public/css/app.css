@@ -100,9 +100,29 @@ button{
   width: 100%;
 }
 
-.miF ooter{
+.miFooter{
 margin-bottom: 5%;
 }
+
+.chatcito{
+ 
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat {
+  border: purple solid 5px;
+  border-radius: 25%;
+  width: 10%;
+}
+
+.chatcito p{
+  color: brown;
+  padding: 5%;
+  margin-left: 5%;
+  
+}
+
 
  .container, .container-lg, .container-md, .container-sm, .container-xl {
   max-width: 100%;
