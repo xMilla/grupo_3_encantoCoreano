@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="../../css/bootstrap-grid.css"> 
+    <link rel="stylesheet" href="../../css/bootstrap.css"> 
     <link rel="stylesheet" href="../../css/app.css">
-    <link rel="stylesheet" href="css/nivo-slider.css">
-	  <link rel="stylesheet" href="css/mi-slider.css">
-
+  
     <title>EncantoCoreano</title>
 </head>
 <body>
@@ -22,7 +20,7 @@
       </div>
      
       <div class="col-12 col-md-6 col-lg-7 contenedor-menu">
-        <div class="container">
+        <div class="container menucito">
           <div class="row justify-content-center menucito">
               <a class="col-3" href="#home">~HOME~</a>
               <a class="col-3" href="./productAdd.html">K~BEUTY</a>
@@ -36,7 +34,7 @@
         
         <div class="loginCarrito container">
           <div class="login row justify-content-center ">
-            <a class="col-6" href="./productAdd.html"> <img class="img-user" src="../../images/circle-user.png" alt="img-user"> </a>   
+            <a class="col-6" href=""> <img class="img-user" src="../../images/circle-user.png" alt="img-user"> </a>   
             <a class="col-6" href=""><img class="img-user" src="../../images/carrito.png" alt="carrito"></a> 
           </div>
         </div>
@@ -52,35 +50,72 @@
 
   </nav>
 
-  <div class="cuerpo">
-    <div class="slider-wrapper theme-mi-slider">
-      <div id="slider" class="nivoSlider">     
-          <img src="img/1.jpg" alt="" title="#htmlcaption1" />    
-          <img src="img/2.jpg" alt="" title="#htmlcaption2" />    
-          <img src="img/3.jpg" alt="" title="#htmlcaption3" />     
-      </div> 
-      <div id="htmlcaption1" class="nivo-html-caption">     
-          <h1>Sean Bienvenidos</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <div class="contenido">
+    <h1 class="ofertas">50% OFF</h1>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../../images/candy_1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../../images/gaseosa_1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../../images/galles_2.jpg" class="d-block w-100" alt="...">
+        </div>
       </div>
-      <div id="htmlcaption2" class="nivo-html-caption">     
-          <h1>Acerca de Nosotros</h1>
-      </div>
-      <div id="htmlcaption3" class="nivo-html-caption">     
-          <h1>Gracias por visitar</h1>
-      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-  </div>
 
-</div>
+    <h1 class="novedades">Novedades</h1>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../../images/candy_1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../../images/gaseosa_1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../../images/galles_2.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  </div>
 
 
 
 <div class="mediosPago">
-
+ <img src="../../images/mediosdepago.png" alt="">
 </div>
 
 <div class="miFooter">
+
+  <div class="card miFooter">
+    <div class="card-header">
+      Nosotros
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Encanto Coreano</h5>
+      <p class="card-text">by mfcaldao, lisernia, xMilla</p>
+    </div>
+  </div>
 
 </div>
  
@@ -88,14 +123,7 @@
     <script src="../../js/jquery.js"></script>
     <script src="../../js/popper.js"></script>  
     <script src="../../js/bootstrap.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
-	<script src="js/jquery.nivo.slider.js"></script>
-
-	<script type="text/javascript"> 
-		$(window).on('load', function() {
-		    $('#slider').nivoSlider(); 
-		}); 
-	</script>
-    
+    <script src="../../js/jquery.slides.min.js"></script>
+        
 </body>
 </html>
