@@ -12,7 +12,7 @@ header{
   width: 100%;
 }
 
-.navbar{
+.nnavbar{
   background-color:#fbf1fb6e;
   border: 0;
 }
@@ -69,6 +69,32 @@ button{
    padding: 0;
    margin: 0;
    text-decoration-line: none;
+ }
+
+ .cuerpo{
+   width: 90%;
+ }
+
+ .slides{
+   width: 95%;
+   margin: auto;
+   overflow: hidden;
+ }
+
+ .slides ul{
+   display: flex;
+   padding: 0;
+   width: 400%;
+  
+ }
+
+ .slides li{
+   width: 100%;
+   list-style: none;
+ }
+ 
+ .slides img{
+   width: 90%;
  }
 
  .container, .container-lg, .container-md, .container-sm, .container-xl {
@@ -202,4 +228,15 @@ button{
       font-size: 30px;
     }
   }
+}
+
+@keyframes cambio {
+  0% {margin: 0;}
+  20% {margin: 0;}
+  25% {margin: -100%;}
+  45% {margin: -100%;}
+  50% {margin: -200%;}
+  70% {margin: -200%;}
+  75% {margin: -300%;}
+  100% {margin: -300%;}
 }
