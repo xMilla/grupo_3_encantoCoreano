@@ -7,7 +7,31 @@
 header{
   width: 100%;
 }
+.Totalcarrito{
+  text-align: center;
+  font-family: Berlin Sans FB;
+  color: black;
+}
 
+.imagencarrito{
+  padding: 5px;
+  height:50px;
+ 
+  width:40px;
+}
+
+.botoncarrito{
+  padding: 5px;
+   margin-top: 50px;
+}
+
+
+.fotocarrito{
+  padding: 5px;
+  height:80px;
+ 
+  width:60px;
+}
 .ppl{
   width: 100%;
 }
@@ -33,7 +57,7 @@ input{
   font: 300 11px Berlin Sans FB;
 }
 
-button{
+.button{
    border-radius: 3px;
    color: white;
    background-color: plum;
@@ -56,6 +80,15 @@ button{
  .login{
    margin-bottom: 20px;
  }
+
+ .carrito{
+  margin-top: 60px;
+  font-family: Berlin Sans FB;
+  text-align: center;
+  border: 3px solid plum;
+  src: url(../../fonts/BRLNSR.woff);
+}
+
 
  .img-user{
    width: 40%;
@@ -177,10 +210,17 @@ margin-bottom: 5%;
        padding-left: 0%;
      }    
 
+<<<<<<< HEAD
+     .img-producto{
+      width: 30%;
+      margin: 10% 0% 10% 20%;
+      padding-left: 0%;
+=======
      .ofertas,
      .novedades{
       margin-left: 20%;
       font-size: 30px;
+>>>>>>> 2aa96f9f4cd429b2d3c84606e92dd6927c3d59a9
     }
   }
 
