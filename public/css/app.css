@@ -36,7 +36,7 @@ header{
   width: 100%;
 }
 
-.navbar{
+.nnavbar{
   background-color:#fbf1fb6e;
   border: 0;
 }
@@ -104,6 +104,59 @@ input{
    text-decoration-line: none;
  }
 
+ .contenido{
+   width: 50%;
+   margin-left: 25%;
+   margin-top: 10%;
+   margin-bottom: 10%;
+ }
+
+.ofertas{
+  margin-left: 20%;
+  color: yellowgreen;
+  font-size: 20px;
+}
+ 
+.novedades{
+  margin-top: 10%;
+  margin-left: 10% ;
+  font-size: 20px;
+  color: slateblue;
+}
+
+.mediosPago{
+  margin: 10% 25%;
+  width: 50%;
+}
+
+.mediosPago img{
+  width: 100%;
+}
+
+.miFooter{
+margin-bottom: 5%;
+}
+
+.chatcito{
+ 
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat {
+  border: purple solid 5px;
+  border-radius: 25%;
+  width: 10%;
+}
+
+.chatcito p{
+  color: brown;
+  padding: 5%;
+  margin-left: 5%;
+  
+}
+
+
  .container, .container-lg, .container-md, .container-sm, .container-xl {
   max-width: 100%;
  }
@@ -130,6 +183,13 @@ input{
        margin: 50% 50% 10% 30%;
        padding-left: 0%;
      }   
+
+     .ofertas,
+     .novedades{
+      margin-left: 20%;
+      font-size: 25px;
+    }
+    
   }
 
   @media(min-width: 425px){
@@ -150,10 +210,17 @@ input{
        padding-left: 0%;
      }    
 
+<<<<<<< HEAD
      .img-producto{
       width: 30%;
       margin: 10% 0% 10% 20%;
       padding-left: 0%;
+=======
+     .ofertas,
+     .novedades{
+      margin-left: 20%;
+      font-size: 30px;
+>>>>>>> 2aa96f9f4cd429b2d3c84606e92dd6927c3d59a9
     }
   }
 
@@ -164,6 +231,9 @@ input{
       font-size: 10px;
     }
     
+    .menucito{
+      margin-top: 10%;
+    }
     .contenedor-img{
       margin-left: -15%;
     }
@@ -179,6 +249,13 @@ input{
        width: 50%;
       }
 
+      .ofertas,
+     .novedades{
+      margin-left: 20%;
+      font-size: 40px;
+    }
+
+    }
       @media(min-width: 1024px){
 
         
@@ -208,7 +285,7 @@ input{
            width: 150%;
          }
 
-         .loginCarrito{
+         .loginCarrito{ 
            width: 100%;
            margin-top: 0%;
          }
@@ -222,6 +299,12 @@ input{
          .logo{
            width: 140%;
          }
+
+     .ofertas,
+     .novedades{
+      margin-left: 30%;
+      font-size: 45px;
+    }
   }
 
   @media(min-width: 1440px){
@@ -240,5 +323,11 @@ input{
       margin-left: 0%;
       font-size: 30px;
     }
+
+    .ofertas,
+     .novedades{
+      margin-left: 30%;
+      font-size: 50px;
+    }
   }
-}
+

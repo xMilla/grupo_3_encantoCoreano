@@ -8,4 +8,6 @@ const mainController = require('../controllers/mainController');
 /* GET - home page. */
 router.get('/', mainController.root);
 
+router.get('/productAdd.html',mainController.root);
+
 module.exports = router;
