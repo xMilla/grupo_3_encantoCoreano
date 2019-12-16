@@ -96,6 +96,10 @@ input{
    padding-left: 0%;
  }
 
+ .img-user:hover{
+   color: violet;
+ }
+
  a{
    text-decoration-color: black;
    font-size: 15px;
@@ -156,10 +160,38 @@ margin-bottom: 5%;
   
 }
 
+.cuerpoProductAdd input{
+  display: flex;
+}
+
+.abajo{
+  display: block;
+}
+
+.cuerpoProductAdd .row {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.cargaBotones{
+  margin-left: -35%;
+}
+
+.botoncito{
+  border-radius: 5%;
+  padding-left: 5%;
+  margin-top: 5%;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  background-color: plum;
+}
 
  .container, .container-lg, .container-md, .container-sm, .container-xl {
   max-width: 100%;
  }
+
+
 
  @font-face {
   font-family: Berlin Sans FB;
