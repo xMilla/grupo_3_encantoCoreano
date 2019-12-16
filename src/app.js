@@ -26,6 +26,11 @@ app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 const mainRouter = require('./routes/main');
 app.use('/', mainRouter);
 
+const rutasCarrito = require('./routes/carrito');
+app.get('/Carrito', rutasCarrito);
+
+const rutasMetodoPago = require('./routes/metodopago');
+app.get('/MetodoPago', rutasMetodoPago);
 
 
 // ************ DON'T TOUCH FROM HERE ************
