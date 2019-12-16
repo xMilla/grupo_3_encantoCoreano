@@ -8,6 +8,7 @@ function readHTML (fileName) {
 	return htmlFile;
 }
 
+
 const Carritocontroller = {
 	root: (req, res) => {
 		let html = readHTML('Carrito');

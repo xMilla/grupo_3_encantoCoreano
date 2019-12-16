@@ -8,6 +8,7 @@ function readHTML (fileName) {
 	return htmlFile;
 }
 
+
 const MatodoPagocontroller = {
 	root: (req, res) => {
 		let html = readHTML('MetodoPago');

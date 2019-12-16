@@ -8,4 +8,5 @@ const MetodoPagoController = require('../controllers/MetodoPagoController');
 /* GET - Carrito. */
 router.get('/MetodoPago', MetodoPagoController.root);
 
+
 module.exports = router;
