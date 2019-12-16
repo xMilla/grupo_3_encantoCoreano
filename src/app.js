@@ -35,6 +35,12 @@ app.get('/MetodoPago', rutasMetodoPago);
 const rutasproductAdd = require('./routes/productAdd');
 app.get('/productAdd', rutasproductAdd);
 
+const rutasdetalleproducto = require('./routes/detalleproducto');
+app.get('/detalleproducto', rutasdetalleproducto);
+
+const rutasregistro = require('./routes/registro');
+app.get('/registro', rutasregistro);
+
 
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************
