@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // ************ Controller Require ************
-const productAdd = require('../controllers/productAdd');
+const productAdd = require('../controllers/productAddController');
 
 /* GET - Carrito. */
 router.get('/productAdd', productAdd.root);

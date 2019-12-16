@@ -8,12 +8,12 @@ function readHTML (fileName) {
 	return htmlFile;
 }
 
-
 const productAddController = {
 	root: (req, res) => {
 		let html = readHTML('productAdd');
 		res.send(html);
 	},
+	
 };
 
 module.exports = productAddController
