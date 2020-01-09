@@ -11,8 +11,8 @@ function readHTML (fileName) {
 
 const detallePcontroller = {
 	root: (req, res) => {
-		let html = readHTML('detalleproducto');
-		res.send(html);
+		//let html = readHTML('detalleproducto');
+		res.render('detalleproducto');
 	},
 };
 

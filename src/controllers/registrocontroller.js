@@ -11,8 +11,8 @@ function readHTML (fileName) {
 
 const registrocontroller = {
 	root: (req, res) => {
-		let html = readHTML('registro');
-		res.send(html);
+		//let html = readHTML('registro');
+		res.render('registro');
 	},
 };
 

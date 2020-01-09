@@ -10,8 +10,8 @@ function readHTML (fileName) {
 
 const productAddController = {
 	root: (req, res) => {
-		let html = readHTML('productAdd');
-		res.send(html);
+		//let html = readHTML('productAdd');
+		res.render('productAdd');
 	},
 	
 };

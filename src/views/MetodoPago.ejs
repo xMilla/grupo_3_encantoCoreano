@@ -1,56 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<%- include('partials/head')%>
+<%- include('partials/menu')%>
 
-    <link rel="stylesheet" href="../../css/bootstrap-grid.min.css"> 
-    <link rel="stylesheet" href="../../css/app.css">
-
-    <title>EncantoCoreano</title>
-</head>
-<body>
-    
- <div class="container ppl">
-  <nav class="row navbar justify-content-center">  
-      
-      <div class="col-12 col-md-4 col-lg-2 contenedor-img"> 
-         <a href="#"> <img class="logo" src="../../images/logo_V7_sm.png" alt="Logo"></a>
-      </div>
-     
-      <div class="col-12 col-md-6 col-lg-7 contenedor-menu">
-        <div class="container">
-          <div class="row justify-content-center menucito">
-              <a class="col-3" href="">~HOME~</a>
-              <a class="col-3" href="">K~BEUTY</a>
-              <a class="col-3" href="">K~FOOD</a>
-              <a class="col-3" href="">K~MUSIC</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-12 col-lg-3 searchLogin">
-        
-        <div class="loginCarrito container">
-          <div class="login row justify-content-center ">
-            <a class="col-6" href=""> <img class="img-user" src="../../images/circle-user.png" alt="img-user"> </a>   
-            <a class="col-6" href="Carrito"><img class="img-user" src="../../images/carrito.png" alt="carrito"></a> 
-          </div>
-        </div>
-
-        <div class="container search">
-          <form class="row justify-content-center txtbuscar">
-            <input class="col-lg-4" for="boton" class="" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="col-lg-8  button" type="submit" name="boton">Buscar</button>
-          </form>
-
-        </div>
-      </div>
-
-  </nav>
-</div>
- 
 <div class="container" >
   <div class="row carrito"  >
     <div class="col-sm-2" >
@@ -92,10 +42,4 @@
     
   </div>
   
-</div>
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/popper.js"></script>  
-    <script src="../../js/bootstrap.js"></script>
-   
-</body>
-</html>
+  <%- include('partials/footer')%>

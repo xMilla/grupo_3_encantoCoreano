@@ -11,8 +11,8 @@ function readHTML (fileName) {
 
 const Carritocontroller = {
 	root: (req, res) => {
-		let html = readHTML('Carrito');
-		res.send(html);
+		//let html = readHTML('Carrito');
+		res.render('carrito');
 	},
 };
 

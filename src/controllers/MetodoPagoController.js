@@ -11,8 +11,8 @@ function readHTML (fileName) {
 
 const MatodoPagocontroller = {
 	root: (req, res) => {
-		let html = readHTML('MetodoPago');
-		res.send(html);
+		//let html = readHTML('MetodoPago');
+		res.render('MetodoPago');
 	},
 };
 
