@@ -27,20 +27,20 @@ const mainRouter = require('./routes/main');
 app.use('/', mainRouter);
 //app.get('/', (req,res) => res.render('index'));
 
-const rutasCarrito = require('./routes/carrito');
-//app.get('/Carrito', (req,res) => res.render('Carrito'));
+//const rutasCarrito = require('./routes/carrito');
+app.get('/Carrito', (req,res) => res.render('Carrito'));
 
-const rutasMetodoPago = require('./routes/metodopago');
-//app.get('/MetodoPago', (req,res) => res.render('MetodoPago'));
+//const rutasMetodoPago = require('./routes/metodopago');
+app.get('/MetodoPago', (req,res) => res.render('MetodoPago'));
 
-const rutasproductAdd = require('./routes/productAdd');
-//app.get('/productAdd', (req,res) => res.render('productAdd'));
+//const rutasproductAdd = require('./routes/productAdd');
+app.get('/productAdd', (req,res) => res.render('productAdd'));
 
-const rutasdetalleproducto = require('./routes/detalleproducto');
-//app.get('/detalleproducto', (req,res) => res.render('detalleproducto'));
+//const rutasdetalleproducto = require('./routes/detalleproducto');
+app.get('/detalleproducto', (req,res) => res.render('detalleproducto'));
 
-const rutasregistro = require('./routes/registro');
-//app.get('/registro', (req,res) => res.render('registro'));
+//const rutasregistro = require('./routes/registro');
+app.get('/registro', (req,res) => res.render('registro'));
 
 
 // ************ DON'T TOUCH FROM HERE ************
