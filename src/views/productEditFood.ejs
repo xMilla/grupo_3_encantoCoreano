@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../../css/bootstrap-grid.css"> 
+    <link rel="stylesheet" href="../../css/app.css">
+
+    <title>EncantoCoreanoAdmin</title>
+</head>
+<body>
+ 
+  
+ <div class="container ppl">
+  <nav class="row nnavbar justify-content-center">  
+      
+      <div class="col-12 col-md-4 col-lg-2 contenedor-img"> 
+         <a href="#"> <img class="logo" src="../../images/logo_V7_sm.png" alt="Logo"></a>
+      </div>
+     
+      <div class="col-12 col-md-6 col-lg-7 contenedor-menu">
+        <div class="container">
+          <div class="row justify-content-center menucito">
+              
+              <a class="col-3" href="productAdd">K~BEUTY</a>
+              <a class="col-3" href="productEditFood">K~FOOD</a>
+              <a class="col-3" href="">K~MUSIC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-3 searchLogin">
+        
+        <div class="loginCarrito container">
+          <div class="login row justify-content-center ">
+            <div class="col-6"><h1 class="img-user">Admin</h1"></div>
+            <a class="col-6" href=""><img class="img-user" src="../../images/carrito.png" alt="carrito"></a> 
+          </div>
+        </div>
+
+        <div class="container search">
+          <form class="row justify-content-center txtbuscar">
+            <input class="col-lg-8" for="boton" class="" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="col-lg-3  button" type="submit" name="boton">Buscar</button>
+          </form>
+
+        </div>
+      </div>
+
+  </nav>
+</div>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4"></h1>
+  <p class="lead"> </p>
+</div>
+
+
+<div class="container">
+
+  <div class="row card-deck mb-3 text-center">
+    <% productos.forEach(function (unProducto) { %>
+    <div class="col-sm-3 card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal"><%= unProducto.nombre_producto %></h4>
+      </div>
+      <div class="card-body">
+      
+        <h1 class="card-title pricing-card-title"><%= unProducto.precio_producto %> <small class="text-muted"></small></h1>
+        <ul class="list-unstyled mt-3 mb-4 listaprod">
+          <li><%= unProducto.descipcion_producto %></li>
+          <li><img   src="../../images/Comida/CJCaimi_dashidachica.jpg" alt="Combini"></li>
+           
+
+        </ul>
+        
+        
+
+        <form action="/borrar/<%= unProducto.id %>?_method=DELETE" method="POST">
+					<button>BORRAR</button>
+				</form>
+        
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  
+</div>
+
+
+  <%- include('partials/footer')%>
+    
+

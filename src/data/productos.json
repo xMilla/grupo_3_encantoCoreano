@@ -1,0 +1,83 @@
+[
+ {
+  "id": 2,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 3,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 4,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 5,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 6,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 7,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 8,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 9,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ },
+ {
+  "id": 10,
+  "nombre_producto": "Borrador",
+  "imagen_producto": "CJCaimi_dashida.jpg",
+  "categoria_prod": "Food",
+  "precio_producto": "12",
+  "color_producto": "rosa",
+  "descripcion_producto": "un borrador "
+ }
+]

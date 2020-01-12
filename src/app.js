@@ -4,9 +4,30 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
-
+const fs = require('fs');
+ 
+ 
+const router = express.Router();
 // ************ express() - (don't touch) ************
 const app = express();
+const ubicacionProductos = './src/data/productos.json';
+
+function traerProductos () {
+	let contenidoProductos = fs.readFileSync(ubicacionProductos, 'utf-8');
+	contenidoProductos = contenidoProductos == '' ? [] : JSON.parse(contenidoProductos);
+	return contenidoProductos;
+};
+function guardarProductos (productos) {
+	fs.writeFileSync(ubicacionProductos, JSON.stringify(productos, null, ' '));
+}
+ function borrar (req, res){
+	let productos = traerProductos();
+	productosFinales = productos.filter(function(unProducto){
+		return unProducto.id != req.params.idProducto;
+	});
+	guardarProductos(productosFinales);
+	res.redirect('/');
+}
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
@@ -24,6 +45,7 @@ app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************
 const mainRouter = require('./routes/main');
+
 app.use('/', mainRouter);
 //app.get('/', (req,res) => res.render('index'));
 
@@ -35,6 +57,23 @@ app.get('/MetodoPago', (req,res) => res.render('MetodoPago'));
 
 //const rutasproductAdd = require('./routes/productAdd');
 app.get('/productAdd', (req,res) => res.render('productAdd'));
+
+//const rutasproductAdd = require('./routes/productAdd');
+app.get('/productEditFood', (req,res) => res.render('productEditFood', { productos: traerProductos() }));
+const productEditFoodController = require('./routes/productEditFood');
+ 
+
+app.post('/borrar/:idProducto', function (req, res) {
+   
+  let productos = traerProductos();
+  productosFinales = productos.filter(function(unProducto){
+    return unProducto.id != req.params.idProducto;
+  });
+  guardarProductos(productosFinales);
+  
+  //res.send('productEditFood', { productos: traerProductos() });
+   res.render('productEditFood', { productos: traerProductos() })
+});
 
 //const rutasdetalleproducto = require('./routes/detalleproducto');
 app.get('/detalleproducto', (req,res) => res.render('detalleproducto'));
