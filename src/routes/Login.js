@@ -3,10 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 // ************ Controller Require ************
-const registrocontroller = require('../controllers/registrocontroller');
+const loginController = require('../controllers/loginController');
 
-/* GET - Carrito. */
-router.get('/registro', registrocontroller.root);
+/* GET - Login/registro */
+router.get('/registro', loginController.registro);
 
 
 module.exports = router;

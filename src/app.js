@@ -24,23 +24,13 @@ app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************
 const mainRouter = require('./routes/main');
+const loginRoutes = require('./routes/Login');
+const productsRoutes = require('./routes/productsRoutes');
+
 app.use('/', mainRouter);
-//app.get('/', (req,res) => res.render('index'));
+app.use('/products', productsRoutes);
+app.use('/login', loginRoutes);
 
-//const rutasCarrito = require('./routes/carrito');
-app.get('/Carrito', (req,res) => res.render('Carrito'));
-
-//const rutasMetodoPago = require('./routes/metodopago');
-app.get('/MetodoPago', (req,res) => res.render('MetodoPago'));
-
-//const rutasproductAdd = require('./routes/productAdd');
-app.get('/productAdd', (req,res) => res.render('productAdd'));
-
-//const rutasdetalleproducto = require('./routes/detalleproducto');
-app.get('/detalleproducto', (req,res) => res.render('detalleproducto'));
-
-//const rutasregistro = require('./routes/registro');
-app.get('/registro', (req,res) => res.render('registro'));
 
 
 // ************ DON'T TOUCH FROM HERE ************
