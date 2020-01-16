@@ -191,7 +191,10 @@ margin-bottom: 5%;
   max-width: 100%;
  }
 
-
+ .imgProducts{
+   margin: auto;
+   width: 90%;
+ }
 
  @font-face {
   font-family: Berlin Sans FB;
