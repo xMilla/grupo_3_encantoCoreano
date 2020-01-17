@@ -10,13 +10,17 @@ const productsController = require('../controllers/productsController');
 /***********************MULTER***************************/
 let diskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, path.join(__dirname, '../../public/images/avatars'));
+		cb(null, path.join(__dirname, '../../public/images/k-music'));
 	},
 	filename: function (req, file, cb) {
 		let finalName = Date.now() + path.extname(file.originalname);
 		cb(null, finalName);
 	}
 });
+
+// ************ Middlewares ************
+
+
 
 let upload = multer({ storage: diskStorage })
 
@@ -36,6 +40,9 @@ router.get('/music', productsController.music);
 
 /* GET - Producto-> /products/add */
 router.get('/add', productsController.add);
+
+/* POST - Producto-> /products/add */
+router.post('/add', upload.single('foto'), productsController.addProcess);
 
 /* GET - Producto-> /products/detalle */
 router.get('/detalle', productsController.detail);

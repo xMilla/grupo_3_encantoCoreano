@@ -6,19 +6,29 @@ const bcrypt = require('bcrypt');
 const filePath = path.join(__dirname, '../data/data.json');
 
 // Helper Functions
-function getAll () {
+function getAll (tipo) {
     let fileContent = fs.readFileSync(filePath, 'utf-8');
-	let dataArray;
-	if (fileContent == ' ') {
-		dataArray = [];
-	} else {
-		dataArray = JSON.parse(fileContent);
+	let dataArray = fileContent == ' '? [] : JSON.parse(fileContent);
+	let filtrado = [];
+	switch (tipo){
+		case 'todos':
+			filtrado = dataArray;
+			break;
+		case 'beauty':
+			filtrado = dataArray.map((dato) => dato.tipo == 'beauty');
+			break;
+		case 'food':
+			filtrado = dataArray.map((dato) => dato.tipo == 'food');
+			break;
+		case ' k-pop':			
+			filtrado = dataArray.map((dato) => dato.tipo == 'k-pop');
+			break;
 	}
-	return dataArray; 
+	return filtrado; 
 }
 
 function generateId () {
-	let data = getAll();
+	let data = getAll('todos');
 	if (data.length == 0) {
 		return 1;
 	}
@@ -27,9 +37,19 @@ function generateId () {
 }
 
 function storeData (data) {
-	let allData = getAllallData();
-	allData.push(data);
-	fs.writeFileSync(allDataFilePath, JSON.stringify(allData, null, ' '));
+	let allData = getAll('todos');
+	newData = {
+		id: generateId(),
+		...data
+	};
+	allData.push(newData);
+	fs.writeFileSync(filePath, JSON.stringify(allData, null, ' '));
+}
+
+function getProductById(id) {
+	let allData = getAll('todos');
+	let dataById = allData.find(data => data.id == id);
+	return dataById;
 }
 
 module.exports = {getAll,generateId,storeData}
