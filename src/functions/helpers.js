@@ -45,8 +45,25 @@ function storeData (data,accion) {
 		};
 		allData.push(newData);
 	}
-	else
-	allData = data;
+	else if(accion == 'borrar'){
+		allData = data;		
+	}
+	else{
+		
+		let productosFinales = allData.filter(function(producto){
+			
+			console.log('el id del que quiero actu es: ' + data.id);
+			return producto.id != data.id;
+		});
+
+		data = {
+			id : data.id,
+			...data
+		}
+		productosFinales.push(data);
+		allData = productosFinales;
+
+	}
 	fs.writeFileSync(filePath, JSON.stringify(allData, null, ' '));
 }
 

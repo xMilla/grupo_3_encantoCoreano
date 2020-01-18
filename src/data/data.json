@@ -52,19 +52,6 @@
   "imagen": "cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam"
  },
  {
-  "id": 5,
-  "nombre": "LoveYourSelf",
-  "tipo": "k-pop",
-  "marca": "bighit",
-  "tamaño": 76,
-  "color": "Blue",
-  "precio": 664.06,
-  "stock": 77,
-  "descripcion": "ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna",
-  "descripcion_larga": "et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci",
-  "imagen": "ornare consequat lectus in est risus auctor sed tristique in"
- },
- {
   "id": 6,
   "nombre": "MOTS_Persona",
   "tipo": "k-pop",
@@ -130,16 +117,16 @@
   "foto": "imagencita_prueba"
  },
  {
-  "id": 12,
-  "nombre": "youn gforever",
+  "id": "12",
+  "nombre": "iungi",
   "tipo": "k-pop",
-  "marca": "big hit",
-  "tamaño": "12",
-  "color": "blanco",
-  "precio": "12341",
-  "stock": "12",
-  "desc": "disco",
-  "descripcion": "disco young forever de bts",
-  "foto": "1579235945648.jpg"
+  "marca": "9",
+  "tamaño": "9",
+  "color": "9",
+  "precio": "999999999",
+  "stock": "9",
+  "desc": "999",
+  "descripcion": "9",
+  "foto": "1579330855876.jpg"
  }
 ]

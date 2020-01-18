@@ -41,17 +41,29 @@ router.get('/music', productsController.music);
 /* GET - Producto-> /products/add */
 router.get('/add', productsController.add);
 
+/* GET - Producto-> /products/add */
+router.get('/add/:idProducto', productsController.add);
+
+/* POST - Producto-> /products/add */
+router.post('/add', upload.single('foto'), productsController.addProcess);
+
+/* POST - Producto-> /products/add */
+router.post('/add/:idProducto',upload.single('foto'), productsController.updateAdd);
+
 /* GET - Producto-> /products/todosAdmin */
 router.get('/todosAdmin', productsController.todosAdmin);
 
 /* POST - Producto-> /products/borrar/id*/
 router.post('/borrar/:idProducto', productsController.borrar);
 
-/* POST - Producto-> /products/add */
-router.post('/add', upload.single('foto'), productsController.addProcess);
+/* GET - Producto-> /products/borrar/id*/
+router.get('/update/:idProducto', productsController.update);
 
 /* GET - Producto-> /products/detalle */
 router.get('/detalle', productsController.detail);
+
+/* GET - Producto-> /products/detalle/id */
+router.get('/detalle:idProducto', productsController.detail);
 
 
 module.exports = router;

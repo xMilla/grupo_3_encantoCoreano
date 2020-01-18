@@ -36,13 +36,34 @@ const productAddController = {
 	add: (req, res) => {
 		res.render('productAdd');
 	},
+	update: (req, res) => {
+		res.render('productAdd',{'productoId':req.params.idProducto});
+	},
+	updateAdd: (req, res) => {
+		// Asignar el nombre final de la imagen
+		req.body.foto = req.file.filename;
+
+		// Guardar el producto y como la función retorna la data lo almacenamos en ela variable "product"
+		if(req.body.idProducto != ' '){
+			req.body.id = req.params.idProducto;			
+			helperFunctions.storeData(req.body,'update');
+		}
+		else{
+		    helperFunctions.storeData(req.body,'add');
+		}
+		
+
+		// Redirección para seguir agregando productos
+		return res.send('Producto cargado');
+
+	},
 	addProcess: (req, res) => {
 		// Asignar el nombre final de la imagen
 		req.body.foto = req.file.filename;
 
 		// Guardar el producto y como la función retorna la data lo almacenamos en ela variable "product"
-		let product = helperFunctions.storeData(req.body,'add');
-
+		 helperFunctions.storeData(req.body,'add');
+		
 		// Redirección para seguir agregando productos
 		return res.send('Producto cargado');
 
