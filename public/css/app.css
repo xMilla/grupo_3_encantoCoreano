@@ -245,19 +245,34 @@ margin-bottom: 5%;
        padding-left: 0%;
      }    
 
-<<<<<<< HEAD
+.tachitoBorrar{
+  width: 100%;
+  margin-left: 10%;
+}
+
+.botonTachito{
+  border-radius: 5%;
+  text-decoration: none;
+  width: 15%;
+  padding-left: 0%;
+  margin-top: 0%;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  background-color: white;
+}
+
      .img-producto{
       width: 30%;
       margin: 10% 0% 10% 20%;
-      padding-left: 0%;
-=======
+      padding-left: 0%;}
      .ofertas,
      .novedades{
       margin-left: 20%;
       font-size: 30px;
->>>>>>> 2aa96f9f4cd429b2d3c84606e92dd6927c3d59a9
     }
-  }
+  
+
 
   @media(min-width: 768px){
     .contenedor-menu {  
@@ -366,3 +381,4 @@ margin-bottom: 5%;
     }
   }
 
+  }

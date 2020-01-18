@@ -41,6 +41,12 @@ router.get('/music', productsController.music);
 /* GET - Producto-> /products/add */
 router.get('/add', productsController.add);
 
+/* GET - Producto-> /products/todosAdmin */
+router.get('/todosAdmin', productsController.todosAdmin);
+
+/* POST - Producto-> /products/borrar/id*/
+router.post('/borrar/:idProducto', productsController.borrar);
+
 /* POST - Producto-> /products/add */
 router.post('/add', upload.single('foto'), productsController.addProcess);
 

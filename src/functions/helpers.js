@@ -36,13 +36,17 @@ function generateId () {
 	return lastData.id + 1;
 }
 
-function storeData (data) {
+function storeData (data,accion) {
 	let allData = getAll('todos');
-	newData = {
-		id: generateId(),
-		...data
-	};
-	allData.push(newData);
+	if(accion == 'add'){
+		newData = {
+			id: generateId(),
+			...data
+		};
+		allData.push(newData);
+	}
+	else
+	allData = data;
 	fs.writeFileSync(filePath, JSON.stringify(allData, null, ' '));
 }
 

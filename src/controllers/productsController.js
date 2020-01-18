@@ -41,11 +41,22 @@ const productAddController = {
 		req.body.foto = req.file.filename;
 
 		// Guardar el producto y como la función retorna la data lo almacenamos en ela variable "product"
-		let product = helperFunctions.storeData(req.body);
+		let product = helperFunctions.storeData(req.body,'add');
 
 		// Redirección para seguir agregando productos
 		return res.send('Producto cargado');
 
+	},
+	borrar: function (req, res){
+		let product = helperFunctions.getAll('todos');
+		productosFinales = product.filter(function(producto){
+			return producto.id != req.params.idProducto;
+		});
+		helperFunctions.storeData(productosFinales,'borrar');
+		res.redirect('/products/Add');
+	},
+	todosAdmin: (req, res) => {
+		res.render('todosAdmin',{'productos':productsData});
 	},
 	detail: (req, res) => {
 		res.render('detalleProducto');

@@ -104,19 +104,6 @@
   "imagen": "quam sapien varius ut blandit non interdum in ante vestibulum"
  },
  {
-  "id": 9,
-  "nombre": "Twice",
-  "tipo": "k-pop",
-  "marca": "twice",
-  "tamaño": 96,
-  "color": "Turquoise",
-  "precio": 426.4,
-  "stock": 88,
-  "descripcion": "aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan",
-  "descripcion_larga": "facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla",
-  "imagen": "sapien non mi integer ac neque duis bibendum morbi non"
- },
- {
   "id": 10,
   "nombre": "TwiceLand",
   "tipo": "k-pop",
