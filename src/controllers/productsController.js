@@ -37,7 +37,7 @@ const productAddController = {
 		res.render('productAdd');
 	},
 	update: (req, res) => {
-		res.render('productAdd',{'productoId':req.params.idProducto});
+		res.render('productUpdate',{'productoId':req.params.idProducto});
 	},
 	updateAdd: (req, res) => {
 		// Asignar el nombre final de la imagen
@@ -54,7 +54,7 @@ const productAddController = {
 		
 
 		// Redirección para seguir agregando productos
-		return res.send('Producto cargado');
+		res.render('todosAdmin',{'productos':productsData});
 
 	},
 	addProcess: (req, res) => {
@@ -65,7 +65,7 @@ const productAddController = {
 		 helperFunctions.storeData(req.body,'add');
 		
 		// Redirección para seguir agregando productos
-		return res.send('Producto cargado');
+		res.render('todosAdmin',{'productos':productsData});
 
 	},
 	borrar: function (req, res){

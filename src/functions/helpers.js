@@ -33,7 +33,7 @@ function generateId () {
 		return 1;
 	}
 	let lastData = data.pop();
-	return lastData.id + 1;
+	return parseInt(lastData.id) + 1;
 }
 
 function storeData (data,accion) {
@@ -57,9 +57,11 @@ function storeData (data,accion) {
 		});
 
 		data = {
-			id : data.id,
+			id : parseInt(data.id),
 			...data
 		}
+		
+		
 		productosFinales.push(data);
 		allData = productosFinales;
 
@@ -70,7 +72,7 @@ function storeData (data,accion) {
 function getProductById(id) {
 	let allData = getAll('todos');
 	let dataById = allData.find(data => data.id == id);
-	return dataById;
+	return parseInt(dataById);
 }
 
 module.exports = {getAll,generateId,storeData}
