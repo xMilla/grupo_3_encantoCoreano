@@ -2,6 +2,7 @@
   box-sizing: border-box;
   font-family: Berlin Sans FB;
   color: black;
+  
 }
 
 header{
@@ -37,7 +38,7 @@ header{
 }
 
 .nnavbar{
-  background-color:#fbf1fb6e;
+  background-color: rgb(174, 174, 245);
   border: 0;
 }
 
@@ -48,12 +49,22 @@ header{
   font-size: 20px;
 }
 
+.container-promo-envios {
+  background-color:black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  border: 0ch;
+  
+
+}
+
 .contenedor-img{
   margin-left: 20%;
 }
 
-button, 
-input{
+.button, 
+.input{
   font: 300 11px Berlin Sans FB;
 }
 
@@ -281,9 +292,9 @@ margin-bottom: 5%;
       font-size: 10px;
     }
     
-    .menucito{
+    /* ver .menucito{
       margin-top: 10%;
-    }
+    } */
     .contenedor-img{
       margin-left: -15%;
     }
@@ -310,7 +321,7 @@ margin-bottom: 5%;
 
         
         .contenedor-menu {  
-          margin-top: 5%;
+          margin-top: 0%;
           margin-left: 5%;
           
         }
@@ -347,13 +358,16 @@ margin-bottom: 5%;
          }
 
          .logo{
-           width: 140%;
+          width: 135%;
+          margin-top: 43px;
+          margin-left: 30px;
          }
 
      .ofertas,
      .novedades{
-      margin-left: 30%;
+      margin-left: 15%;
       font-size: 45px;
+      
     }
   }
 
