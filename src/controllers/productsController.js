@@ -19,7 +19,7 @@ let upload = multer({ storage: diskStorage })
 
 let productsData = helperFunctions.getAll('todos');
 let musicData = helperFunctions.getAll('k-pop'); //Faltaria filtrar por categoria/tipo : music, food o beauty.
-let beautyData = helperFunctions.getAll('k-beauty'); // flor
+let beautyData = helperFunctions.getAll('beauty'); // flor
 let foodData = helperFunctions.getAll('food'); // flor
 const productAddController = {
 	products: (req, res) => {
@@ -31,6 +31,7 @@ const productAddController = {
 	},
 	beauty: (req, res) => {
 		//res.render('productAdd');
+		res.render('beauty',{'productos': beautyData  });
 	},
 	music: (req, res) => {
 		res.render('music',{'productos':musicData});

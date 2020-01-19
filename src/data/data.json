@@ -281,6 +281,20 @@
     "desc": "Chupetines De Chocolate Coronas.",
     "descripcion": "Chupetines De Chocolate Coronas",
     "foto": "../../images/k-music/chupetines.webp"
+   },
+
+   {
+    "id": 23,
+    "nombre": "Chuptines ",
+    "tipo": "beauty",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "150",
+    "stock": "",
+    "desc": "Chupetines De Chocolate Coronas.",
+    "descripcion": "Chupetines De Chocolate Coronas",
+    "foto": "../../images/k-music/chupetines.webp"
    }
 
 
