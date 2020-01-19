@@ -11,7 +11,7 @@ const mainController = require('../controllers/mainController');
 router.get('/', mainController.root);
 router.get('/carrito',mainController.carrito);
 router.get('/metodoDePago',mainController.metodoDePago);
-
+router.get('/login',mainController.login);
 
 
 
