@@ -149,10 +149,141 @@
     "marca": "",
     "tamaño": "",
     "color": "",
-    "precio": "",
+    "precio": "189",
     "stock": "",
-    "desc": "",
-    "descripcion": "",
-    "foto": "Ramen.webp"
+    "desc": "Ramen Koreano Kpop Instant Noodle Samyang Corea + Fotos Bts",
+    "descripcion": "Ramen Koreano Kpop Instant Noodle Samyang Corea + Fotos Bts",
+    "foto": "../../images/k-music/Ramen.webp"
+   },
+
+   {
+    "id": 15,
+    "nombre": "Helados Coreanos I'm",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "80",
+    "stock": "",
+    "desc": "Helados Coreanos I'm",
+    "descripcion": "Helados Coreanos I'm",
+    "foto": "../../images/k-music/Helados.webp"
+   },
+
+   {
+    "id": 17,
+    "nombre": "Sopa Ramen Coreana",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "120",
+    "stock": "",
+    "desc": "Sopa Ramen Coreana",
+    "descripcion": "Sopa Ramen Coreana",
+    "foto": "../../images/k-music/Sopa.webp"
+   },
+
+   
+   {
+    "id": 18,
+    "nombre": "Sal",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "120",
+    "stock": "",
+    "desc": "Sal Shio Gourmet El Mejor Acompañante Para Tus Comidas",
+    "descripcion": "Sal Shio Gourmet El Mejor Acompañante Para Tus Comidas",
+    "foto": "../../images/k-music/Sal.webp"
+   },
+
+   {
+    "id": 19,
+    "nombre": "Panko",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "160",
+    "stock": "",
+    "desc": "Panko Coreano X 1k - Revend/mayorista Consultar Caba/b.vista",
+    "descripcion": "Panko Coreano X 1k - Revend/mayorista Consultar Caba/b.vista",
+    "foto": "../../images/k-music/panko.webp"
+   },
+
+   {
+    "id": 20,
+    "nombre": "Ttok",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "160",
+    "stock": "",
+    "desc": "Ttok Surtido (comida Coreana)",
+    "descripcion": "Ttok Surtido (comida Coreana)",
+    "foto": "../../images/k-music/Ttok.webp"
+   },
+
+   {
+    "id": 21,
+    "nombre": "Ramen Cup Sopa",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "160",
+    "stock": "",
+    "desc": "Ramen Cup Sopa Instantanea Oriental Picante 65 Gr",
+    "descripcion": "Ramen Cup Sopa Instantanea Oriental Picante 65 Gr",
+    "foto": "../../images/k-music/sopa2.webp"
+   },
+
+   {
+    "id": 21,
+    "nombre": "Cerveza",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "180",
+    "stock": "",
+    "desc": "Cerveza Mangolingo - Sabor Mango, Cerveza Coreana",
+    "descripcion": "Cerveza Mangolingo - Sabor Mango, Cerveza Coreana",
+    "foto": "../../images/k-music/cerveza.webp"
+   },
+
+   {
+    "id": 22,
+    "nombre": "Chamisul Original ",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "180",
+    "stock": "",
+    "desc": "Chamisul Original - Soju Coreano, Licor Coreano.",
+    "descripcion": "Chamisul Original - Soju Coreano, Licor Coreano.",
+    "foto": "../../images/k-music/Chamisul.webp"
+   },
+
+   {
+    "id": 23,
+    "nombre": "Chuptines ",
+    "tipo": "food",
+    "marca": "",
+    "tamaño": "",
+    "color": "",
+    "precio": "150",
+    "stock": "",
+    "desc": "Chupetines De Chocolate Coronas.",
+    "descripcion": "Chupetines De Chocolate Coronas",
+    "foto": "../../images/k-music/chupetines.webp"
    }
+
+
+
+
 ]
