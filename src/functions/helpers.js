@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 
 // allData File Path
 const filePath = path.join(__dirname, '../data/data.json');
