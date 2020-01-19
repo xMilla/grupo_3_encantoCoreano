@@ -19,6 +19,8 @@ let upload = multer({ storage: diskStorage })
 
 let productsData = helperFunctions.getAll('todos');
 let musicData = helperFunctions.getAll('k-pop'); //Faltaria filtrar por categoria/tipo : music, food o beauty.
+console.log(musicData);
+
 
 const productAddController = {
 	products: (req, res) => {
@@ -31,6 +33,7 @@ const productAddController = {
 		//res.render('productAdd');
 	},
 	music: (req, res) => {
+		let musicData = helperFunctions.getAll('k-pop'); 
 		res.render('music',{'productos':musicData});
 	},
 	add: (req, res) => {

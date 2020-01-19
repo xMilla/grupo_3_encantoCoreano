@@ -15,13 +15,13 @@ function getAll (tipo) {
 			filtrado = dataArray;
 			break;
 		case 'beauty':
-			filtrado = dataArray.map((dato) => dato.tipo == 'beauty');
+			filtrado = dataArray.filter((dato) => dato.tipo == 'beauty');
 			break;
 		case 'food':
-			filtrado = dataArray.map((dato) => dato.tipo == 'food');
+			filtrado = dataArray.filter((dato) => dato.tipo == 'food');
 			break;
-		case ' k-pop':			
-			filtrado = dataArray.map((dato) => dato.tipo == 'k-pop');
+		case 'k-pop':			
+			filtrado = dataArray.filter((dato) => dato.tipo == 'k-pop');
 			break;
 	}
 	return filtrado; 
