@@ -13,7 +13,7 @@ let diskStorage = multer.diskStorage({
 		cb(null, path.join(__dirname, '../../public/images/k-music'));
 	},
 	filename: function (req, file, cb) {
-		let finalName = Date.now() + path.extname(file.originalname);
+		let finalName = '../../images/k-music/' + Date.now() + path.extname(file.originalname);
 		cb(null, finalName);
 	}
 });
@@ -70,7 +70,7 @@ router.post('/updatedata/:idProducto',upload.single('foto'), productsController.
 router.get('/detalle', productsController.detail);
 
 /* GET - Producto-> /products/detalle/id */
-router.get('/detalle:idProducto', productsController.detail);
+router.get('/detalle/:idProducto', productsController.detail);
 
 
 module.exports = router;

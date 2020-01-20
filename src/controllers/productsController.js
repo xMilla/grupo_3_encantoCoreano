@@ -9,7 +9,7 @@ let diskStorage = multer.diskStorage({
 		cb(null, path.join(__dirname, '../../public/images/k-music'));
 	},
 	filename: function (req, file, cb) {
-		let finalName = Date.now() + path.extname(file.originalname);
+		let finalName = '../../images/k-music/' + Date.now() + path.extname(file.originalname);
 		cb(null, finalName);
 	}
 });
@@ -21,6 +21,7 @@ let productsData = helperFunctions.getAll('todos');
 let musicData = helperFunctions.getAll('k-pop'); //Faltaria filtrar por categoria/tipo : music, food o beauty.
 let beautyData = helperFunctions.getAll('beauty'); // flor
 let foodData = helperFunctions.getAll('food'); // flor
+
 const productAddController = {
 	products: (req, res) => {
 		res.render('todos',{'productos':productsData});
@@ -83,7 +84,8 @@ const productAddController = {
 		res.render('todosAdmin',{'productos':productsData});
 	},
 	detail: (req, res) => {
-		res.render('detalleProducto');
+		let productdet = helperFunctions.getProductById(req.params.idProducto);		
+		res.render('detalleProducto',{'producto':productdet});
 	},
 	
 };

@@ -72,7 +72,7 @@ function storeData (data,accion) {
 function getProductById(id) {
 	let allData = getAll('todos');
 	let dataById = allData.find(data => data.id == id);
-	return parseInt(dataById);
+	return dataById;
 }
 
-module.exports = {getAll,generateId,storeData}
+module.exports = {getAll,generateId,storeData,getProductById}
