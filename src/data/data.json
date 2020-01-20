@@ -284,20 +284,60 @@
    },
 
    {
-    "id": 23,
-    "nombre": "Chuptines ",
+    "id": 24,
+    "nombre": "Strawberry Milk",
     "tipo": "beauty",
     "marca": "",
     "tamaño": "",
     "color": "",
-    "precio": "150",
+    "precio": "300",
     "stock": "",
-    "desc": "Chupetines De Chocolate Coronas.",
-    "descripcion": "Chupetines De Chocolate Coronas",
-    "foto": "../../images/k-music/chupetines.webp"
-   }
+    "desc": "",
+    "descripcion": "",
+    "foto": "../../images/straberry.jpg"
+   },
 
+   {
+      "id": 25,
+      "nombre": "Tony Moly",
+      "tipo": "beauty",
+      "marca": "",
+      "tamaño": "",
+      "color": "",
+      "precio": "300",
+      "stock": "",
+      "desc": "",
+      "descripcion": "",
+      "foto": "../../images/Tony_Moly.jpg"
+     },
 
+   {
+      "id": 26,
+      "nombre": "Saturday Skin",
+      "tipo": "beauty",
+      "marca": "",
+      "tamaño": "",
+      "color": "",
+      "precio": "300",
+      "stock": "",
+      "desc": "",
+      "descripcion": "",
+      "foto": "../../images/Saturday_Skin.jpg"
+     },
+
+     {
+      "id": 27,
+      "nombre": "Son and Park",
+      "tipo": "beauty",
+      "marca": "",
+      "tamaño": "",
+      "color": "",
+      "precio": "300",
+      "stock": "",
+      "desc": "",
+      "descripcion": "",
+      "foto": "../../images/Son_and_Park.jpg"
+     }
 
 
 ]
