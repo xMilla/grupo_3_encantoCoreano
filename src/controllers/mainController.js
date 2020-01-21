@@ -15,21 +15,9 @@ const controller = {
 	metodoDePago:(req, res) => {
 		res.render('MetodoPago');
 	},
-
 	login:(req, res) => {
 		res.render('login');
-	},
-	carrito: (req, res) => {
-		res.render('Carrito');
-	},
-	metodoDePago:(req, res) => {
-		res.render('MetodoPago');
-	},
-
-	login:(req, res) => {
-		res.render('login');
-	},
-	
+	}
 };
 
 module.exports = controller
