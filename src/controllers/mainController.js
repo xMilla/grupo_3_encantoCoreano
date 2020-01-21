@@ -6,6 +6,7 @@ let productsData = helperFunctions.getAll('todos');
 
 const controller = {
 	root: (req, res) => {
+		console.log("hola");
 		res.render('index',{'productos':productsData});
 	},
 	carrito: (req, res) => {
