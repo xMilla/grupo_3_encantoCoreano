@@ -7,13 +7,13 @@
     <div class="product-container" id="product-section">
       <div class="row">
         <div class="col-md-6">
-          <img height="460px" width="575px" src="../../images/cleanit.jpg" alt="Imagen del producto" class="imagen-producto">
+          <img height="460px" width="575px" src="<%= producto.foto %>" alt="Imagen del producto" class="imagen-producto">
         </div>
         <div class="col-md-6">
           <div class="col-md-12">
-            <h1>CLEAN IT ZERO</h1>
-            <h2>Banila Co</h2>
-            <h3>$1500</h3>
+            <h1><%= producto.nombre %></h1>
+            <h2><%= producto.descripcion %></h2>
+            <h3><%= producto.precio %></h3>
             <H4>
             <a class="payment-link"href="https://www.mercadolibre.com.ar/gz/home/payments/methods" >VER MEDIOS DE PAGO</a>
             </H4>
@@ -34,8 +34,7 @@
           <div class="row">
             <div class="col-md-12">
               <p class="description">
-                Crema limpiadora con extracto de papaya que elimina completamente el maquillaje, es un bálsamo sólido que se transforma en un aceite sedoso en tu piel!
-                Su textura de sorbete ligero disuelve increíblemente el maquillaje pesado, sin eliminar tus propios aceites naturales. Con extracto de papaya para exfoliar la piel de forma natural y extracto de acerola, rico en vitamina C, que ayuda a dar luminosidad a tu piel.
+                <%= producto.descripcion_larga %>
               </p>
             </div>
           </div>
@@ -60,4 +59,6 @@
   
  
 
-  
+  <!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->

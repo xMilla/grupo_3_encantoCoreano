@@ -10,7 +10,7 @@
   "stock": 32,
   "descripcion": "Disco de BlackPink",
   "descripcion_larga": "Disco de BlakPink banda de K-pop",
-  "imagen": "img_1"
+  "foto": "../../images/k-music/blackpink.jpg"
  },
  {
   "id": 2,
@@ -23,7 +23,7 @@
   "stock": 53,
   "descripcion": "hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci",
   "descripcion_larga": "quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse",
-  "imagen": "lorem ipsum dolor sit amet consectetuer adipiscing elit proin risus"
+  "foto": "../../images/k-music/bts_world.jpg"
  },
  {
   "id": 3,
@@ -36,7 +36,7 @@
   "stock": 30,
   "descripcion": "ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce",
   "descripcion_larga": "aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus",
-  "imagen": "cursus vestibulum proin eu mi nulla ac enim in tempor"
+  "foto": "../../images/k-music/fellSpecial.jpg"
  },
  {
   "id": 4,
@@ -49,7 +49,7 @@
   "stock": 13,
   "descripcion": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra",
   "descripcion_larga": "ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in",
-  "imagen": "cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam"
+  "foto": "../../images/k-music/follow.jpg"
  },
  {
   "id": 6,
@@ -62,7 +62,7 @@
   "stock": 28,
   "descripcion": "libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras",
   "descripcion_larga": "curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non",
-  "imagen": "sodales sed tincidunt eu felis fusce posuere felis sed lacus"
+  "foto": "../../images/k-music/MOS_Persona.jpg"
  },
  {
   "id": 7,
@@ -75,7 +75,7 @@
   "stock": 28,
   "descripcion": "at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci",
   "descripcion_larga": "amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia",
-  "imagen": "pellentesque volutpat dui maecenas tristique est et tempus semper est"
+  "foto": "../../images/k-music/RUL82.jpg"
  },
  {
   "id": 8,
@@ -88,7 +88,7 @@
   "stock": 17,
   "descripcion": "in porttitor pede justo eu massa donec dapibus duis at velit eu est",
   "descripcion_larga": "odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
-  "imagen": "quam sapien varius ut blandit non interdum in ante vestibulum"
+  "foto": "../../images/k-music/SLA.jpg"
  },
  {
   "id": 10,
@@ -101,47 +101,178 @@
   "stock": 88,
   "descripcion": "ac nibh fusce lacus purus aliquet at feugiat non pretium",
   "descripcion_larga": "nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed",
-  "imagen": "scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis"
+  "foto": "../../images/k-music/twice_land.webp"
  },
  {
-  "id": "11",
-  "nombre": "young now",
-  "tipo": "",
+  "id": 14,
+  "nombre": "Ramen",
+  "tipo": "food",
   "marca": "",
   "tamaño": "",
   "color": "",
-  "precio": "",
+  "precio": "189",
   "stock": "",
-  "desc": "",
-  "descripcion": "",
-  "foto": "1579358684619.jpg"
+  "desc": "Ramen Koreano Kpop Instant Noodle Samyang Corea + Fotos Bts",
+  "descripcion": "Ramen Koreano Kpop Instant Noodle Samyang Corea + Fotos Bts",
+  "foto": "../../images/k-music/Ramen.webp"
  },
  {
-  "id": 12,
-  "nombre": "este seria el 12 o el 13",
-  "tipo": "",
+  "id": 15,
+  "nombre": "Helados Coreanos I'm",
+  "tipo": "food",
   "marca": "",
   "tamaño": "",
   "color": "",
-  "precio": "",
+  "precio": "80",
   "stock": "",
-  "desc": "",
-  "descripcion": "",
-  "foto": "1579358721474.jpg"
+  "desc": "Helados Coreanos I'm",
+  "descripcion": "Helados Coreanos I'm",
+  "foto": "../../images/k-music/Helados.webp"
  },
  {
-  "id": 13,
-  "nombre": "este seria el 12 o el 13",
-  "tipo": "",
+  "id": 17,
+  "nombre": "Sopa Ramen Coreana",
+  "tipo": "food",
   "marca": "",
   "tamaño": "",
   "color": "",
-  "precio": "",
+  "precio": "120",
+  "stock": "",
+  "desc": "Sopa Ramen Coreana",
+  "descripcion": "Sopa Ramen Coreana",
+  "foto": "../../images/k-music/Sopa.webp"
+ },
+ {
+  "id": 18,
+  "nombre": "Sal",
+  "tipo": "food",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "120",
+  "stock": "",
+  "desc": "Sal Shio Gourmet El Mejor Acompañante Para Tus Comidas",
+  "descripcion": "Sal Shio Gourmet El Mejor Acompañante Para Tus Comidas",
+  "foto": "../../images/k-music/Sal.webp"
+ },
+ {
+  "id": 19,
+  "nombre": "Panko",
+  "tipo": "food",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "160",
+  "stock": "",
+  "desc": "Panko Coreano X 1k - Revend/mayorista Consultar Caba/b.vista",
+  "descripcion": "Panko Coreano X 1k - Revend/mayorista Consultar Caba/b.vista",
+  "foto": "../../images/k-music/panko.webp"
+ },
+ {
+  "id": 20,
+  "nombre": "Ttok",
+  "tipo": "food",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "160",
+  "stock": "",
+  "desc": "Ttok Surtido (comida Coreana)",
+  "descripcion": "Ttok Surtido (comida Coreana)",
+  "foto": "../../images/k-music/Ttok.webp"
+ },
+ {
+  "id": 21,
+  "nombre": "Ramen Cup Sopa",
+  "tipo": "food",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "160",
+  "stock": "",
+  "desc": "Ramen Cup Sopa Instantanea Oriental Picante 65 Gr",
+  "descripcion": "Ramen Cup Sopa Instantanea Oriental Picante 65 Gr",
+  "foto": "../../images/k-music/sopa2.webp"
+ },
+ {
+  "id": 21,
+  "nombre": "Cerveza",
+  "tipo": "food",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "180",
+  "stock": "",
+  "desc": "Cerveza Mangolingo - Sabor Mango, Cerveza Coreana",
+  "descripcion": "Cerveza Mangolingo - Sabor Mango, Cerveza Coreana",
+  "foto": "../../images/k-music/cerveza.webp"
+ },
+ {
+  "id": 22,
+  "nombre": "Chamisul Original ",
+  "tipo": "food",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "180",
+  "stock": "",
+  "desc": "Chamisul Original - Soju Coreano, Licor Coreano.",
+  "descripcion": "Chamisul Original - Soju Coreano, Licor Coreano.",
+  "foto": "../../images/k-music/Chamisul.webp"
+ },
+ {
+  "id": 23,
+  "nombre": "Chuptines ",
+  "tipo": "food",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "150",
+  "stock": "",
+  "desc": "Chupetines De Chocolate Coronas.",
+  "descripcion": "Chupetines De Chocolate Coronas",
+  "foto": "../../images/k-music/chupetines.webp"
+ },
+ {
+  "id": 24,
+  "nombre": "Strawberry Milk",
+  "tipo": "beauty",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "300",
   "stock": "",
   "desc": "",
   "descripcion": "",
-  "foto": "1579358726670.jpg"
+  "foto": "../../images/straberry.jpg"
  },
+ {
+  "id": 25,
+  "nombre": "Tony Moly",
+  "tipo": "beauty",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "300",
+  "stock": "",
+  "desc": "",
+  "descripcion": "",
+  "foto": "../../images/Tony_Moly.jpg"
+ },
+ {
+  "id": 26,
+  "nombre": "Saturday Skin",
+  "tipo": "beauty",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "300",
+  "stock": "",
+  "desc": "",
+  "descripcion": "",
+  "foto": "../../images/Saturday_Skin.jpg"
+ },
+
  {
     "id": 14,
     "nombre": "Ramen",
@@ -337,7 +468,48 @@
       "desc": "",
       "descripcion": "",
       "foto": "../../images/Son_and_Park.jpg"
-     }
+     },
 
+
+     {
+  "id": 27,
+  "nombre": "Son and Park",
+  "tipo": "beauty",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "300",
+  "stock": "",
+  "desc": "",
+  "descripcion": "",
+  "foto": "../../images/Son_and_Park.jpg"
+ },
+
+ {
+  "id": 28,
+  "nombre": "iungi",
+  "tipo": "food",
+  "marca": "lala",
+  "tamaño": "lala",
+  "color": "lala",
+  "precio": "lala",
+  "stock": "",
+  "desc": "",
+  "descripcion": "",
+  "foto": "1579492153116.jpg"
+ },
+ {
+  "id": "30",
+  "nombre": "",
+  "tipo": "",
+  "marca": "",
+  "tamaño": "",
+  "color": "",
+  "precio": "",
+  "stock": "",
+  "desc": "",
+  "descripcion": "",
+  "foto": "../../images/k-music/1579492360850.jpg"
+ }
 
 ]

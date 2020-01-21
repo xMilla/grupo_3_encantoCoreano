@@ -17,8 +17,10 @@
 			
 			  <h1 class="card-title pricing-card-title"> $<%= producto.precio %> <small class="text-muted"></small></h1>
 			  <ul class="list-unstyled mt-3 mb-4 listaprod">
-				<li><%= producto.descipcion %></li>
-                <li><img   src="../../images/k-music/twice.jpg" alt="Imagen Producto" class="imgProducts"></li>
+				<li><a href="detalle/<%= producto.id%>">
+					<img   src="<%= producto.foto %>" alt="Imagen Producto" class="imgProducts"></li>
+				</a>
+                <img   src="<%= producto.foto %>" alt="Imagen Producto" class="imgProducts"></li>
                 <form action="borrar/<%= producto.id %>?_method=DELETE" method="POST">
                     <button class="botonTachito"><img src="../../images/borrar_tachito.png" class="tachitoBorrar" alt="borrar producto"></button>
                 </form>
