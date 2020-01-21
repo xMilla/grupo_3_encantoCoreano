@@ -1,70 +1,28 @@
 <%- include('partials/head')%>
+<%- include('partials/menu')%>
+
   
-  <div class="container ppl">
-    <nav class="row navbar justify-content-center">  
-      
-      <div class="col-12 col-md-4 col-lg-2 contenedor-img"> 
-        <a href="#"> <img class="logo" src="../../images/logo_V7_sm.png" alt="Logo"></a>
-      </div>
-      
-      <div class="col-12 col-md-6 col-lg-7 contenedor-menu">
-        <div class="container">
-          <div class="row justify-content-center menucito">
-            <a class="col-3" href="">~HOME~</a>
-            <a class="col-3" href="">K~BEUTY</a>
-            <a class="col-3" href="">K~FOOD</a>
-            <a class="col-3" href="">K~MUSIC</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-12 col-md-12 col-lg-3 searchLogin">
-        
-        <div class="loginCarrito container">
-          <div class="login row justify-content-center ">
-            <a class="col-6" href=""> <img class="img-user" src="../../images/circle-user.png" alt="img-user"> </a>   
-            <a class="col-6" href=""><img class="img-user" src="../../images/carrito.png" alt="carrito"></a> 
-          </div>
-        </div>
-        
-        <div class="container search">
-          <form class="row justify-content-center txtbuscar">
-            <input class="col-lg-8" for="boton" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="col-lg-3  button" type="submit" name="boton">Buscar</button>
-          </form>
-          
-        </div>
-      </div>
-    </nav>
-  </div>
-    
-    <div class="top-container" style="margin-bottom: 35px;">
-      
-     
-      
-      
-    </div>
-    
+
     
     <div class="product-container" id="product-section">
       <div class="row">
         <div class="col-md-6">
-          <img height="460px" width="575px" src="../../images/cleanit.jpg" alt="Imagen del producto" class="image-responsive">
+          <img height="460px" width="575px" src="<%= producto.foto %>" alt="Imagen del producto" class="imagen-producto">
         </div>
         <div class="col-md-6">
           <div class="col-md-12">
-            <h1>CLEAN IT ZERO</h1>
-            <h2>Banila Co</h2>
-            <h3>$1500</h3>
+            <h1><%= producto.nombre %></h1>
+            <h2><%= producto.descripcion %></h2>
+            <h3><%= producto.precio %></h3>
             <H4>
             <a class="payment-link"href="https://www.mercadolibre.com.ar/gz/home/payments/methods" >VER MEDIOS DE PAGO</a>
             </H4>
 
             
-            <input class="btn btn-default btn-dark btn-qty" value="1" />
+            <input class="btn-product btn-default  btn-qty" value="1" />
             
                    
-              <button class="btn btn-dark btn-brand btn-full-width">
+              <button class="btn-product btn-dark btn-brand btn-full-width">
                 Agregar al carrito
               </button>
               
@@ -76,8 +34,7 @@
           <div class="row">
             <div class="col-md-12">
               <p class="description">
-                Crema limpiadora con extracto de papaya que elimina completamente el maquillaje, es un bálsamo sólido que se transforma en un aceite sedoso en tu piel!
-                Su textura de sorbete ligero disuelve increíblemente el maquillaje pesado, sin eliminar tus propios aceites naturales. Con extracto de papaya para exfoliar la piel de forma natural y extracto de acerola, rico en vitamina C, que ayuda a dar luminosidad a tu piel.
+                <%= producto.descripcion_larga %>
               </p>
             </div>
           </div>
@@ -100,6 +57,8 @@
     
   </div>
   
+ 
 
-
-  
+  <!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->

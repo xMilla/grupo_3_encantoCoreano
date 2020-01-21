@@ -1,0 +1,38 @@
+<%- include('partials/head')%>
+<%- include('partials/menu')%>
+
+<div >
+    <h1 ></h1>
+    <p > </p>
+  </div>
+  <div class="container">
+    <div class="row text-center">
+      <% productos.forEach(function (producto) { %>
+      <div class="col-sm-3 card mb-3 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal"><%= producto.nombre %></h4>
+        </div>
+        <div class="card-body">
+        
+          <h1 class="card-title pricing-card-title"> $<%= producto.precio %> <small class="text-muted"></small></h1>
+          <ul class="list-unstyled mt-3 mb-4 listaprod">
+            <li><%= producto.descipcion %></li>
+            <li><a href="detalle/<%= producto.id%>">
+              <img   src="<%= producto.foto %>" alt="Imagen Producto" class="imgProducts">
+            </li> 
+          </ul>
+          
+          
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    
+  </div>
+<!-- /todos los productos -->
+
+<!-- footer -->
+<%- include('partials/footer') %>
+<!-- /footer -->
+</body>	
+</html>
