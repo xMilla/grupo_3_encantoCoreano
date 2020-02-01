@@ -18,20 +18,20 @@ let upload = multer({ storage: diskStorage })
 
 
 let productsData = helperFunctions.getAll('todos');
-let musicData = helperFunctions.getAll('k-pop'); //Faltaria filtrar por categoria/tipo : music, food o beauty.
-let beautyData = helperFunctions.getAll('beauty'); // flor
-let foodData = helperFunctions.getAll('food'); // flor
+let musicData = helperFunctions.getAll('k-pop'); 
+let beautyData = helperFunctions.getAll('beauty');
+let foodData = helperFunctions.getAll('food'); 
 
 const productAddController = {
 	products: (req, res) => {
 		res.render('todos',{'productos':productsData});
 	},
 	food: (req, res) => {
-		//res.render('productAdd');
+		
 		res.render('food',{'productos': foodData  });
 	},
 	beauty: (req, res) => {
-		//res.render('productAdd');
+		
 		res.render('beauty',{'productos': beautyData  });
 	},
 	music: (req, res) => {
@@ -41,7 +41,8 @@ const productAddController = {
 		res.render('productAdd');
 	},
 	update: (req, res) => {
-		res.render('productUpdate',{'productoId':req.params.idProducto});
+		
+		res.render('productUpdate',{'producto': helperFunctions.getProductById(req.params.idProducto)});
 	},
 	updateAdd: (req, res) => {
 		// Asignar el nombre final de la imagen
@@ -56,9 +57,9 @@ const productAddController = {
 		    helperFunctions.storeData(req.body,'add');
 		}
 		
-
 		// Redirección para seguir agregando productos
-		res.render('todosAdmin',{'productos':productsData});
+	
+		return res.redirect('/products/todosAdmin');
 
 	},
 	addProcess: (req, res) => {
@@ -69,7 +70,7 @@ const productAddController = {
 		 helperFunctions.storeData(req.body,'add');
 		
 		// Redirección para seguir agregando productos
-		res.render('todosAdmin',{'productos':productsData});
+		return res.redirect('/products/todosAdmin');
 
 	},
 	borrar: function (req, res){
@@ -78,7 +79,8 @@ const productAddController = {
 			return producto.id != req.params.idProducto;
 		});
 		helperFunctions.storeData(productosFinales,'borrar');
-		res.redirect('/products/Add');
+		
+		return res.redirect('/products/todosAdmin');
 	},
 	todosAdmin: (req, res) => {
 		res.render('todosAdmin',{'productos':productsData});

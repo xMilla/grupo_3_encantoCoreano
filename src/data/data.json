@@ -39,19 +39,6 @@
   "foto": "../../images/k-music/fellSpecial.jpg"
  },
  {
-  "id": 4,
-  "nombre": "Follow",
-  "tipo": "k-pop",
-  "marca": "MonstaX",
-  "tamaño": 63,
-  "color": "Puce",
-  "precio": 994.06,
-  "stock": 13,
-  "descripcion": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra",
-  "descripcion_larga": "ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in",
-  "foto": "../../images/k-music/follow.jpg"
- },
- {
   "id": 6,
   "nombre": "MOTS_Persona",
   "tipo": "k-pop",
@@ -89,19 +76,6 @@
   "descripcion": "in porttitor pede justo eu massa donec dapibus duis at velit eu est",
   "descripcion_larga": "odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
   "foto": "../../images/k-music/SLA.jpg"
- },
- {
-  "id": 10,
-  "nombre": "TwiceLand",
-  "tipo": "k-pop",
-  "marca": "twice",
-  "tamaño": 16,
-  "color": "Pink",
-  "precio": 985.75,
-  "stock": 88,
-  "descripcion": "ac nibh fusce lacus purus aliquet at feugiat non pretium",
-  "descripcion_larga": "nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed",
-  "foto": "../../images/k-music/twice_land.webp"
  },
  {
   "id": 14,
@@ -284,31 +258,5 @@
   "descripcion_larga": "",
   "descripcion": "",
   "foto": "../../images/Son_and_Park.jpg"
- },
- {
-  "id": 28,
-  "nombre": "iungi",
-  "tipo": "food",
-  "marca": "lala",
-  "tamaño": "lala",
-  "color": "lala",
-  "precio": "lala",
-  "stock": "",
-  "descripcion_larga": "",
-  "descripcion": "",
-  "foto": "1579492153116.jpg"
- },
- {
-  "id": "30",
-  "nombre": "",
-  "tipo": "",
-  "marca": "",
-  "tamaño": "",
-  "color": "",
-  "precio": "",
-  "stock": "",
-  "descripcion_larga": "",
-  "descripcion": "",
-  "foto": "../../images/k-music/1579492360850.jpg"
  }
 ]

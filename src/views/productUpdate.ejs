@@ -3,29 +3,29 @@
 
 <div class="cuerpoProductAdd container">
   <div>
-    <form  class="row justify-content-around" action="/products/updatedata/<%= productoId %> " method="POST" enctype='multipart/form-data' >
+    <form  class="row justify-content-around" action="/products/updatedata/<%= producto.Id %> " method="POST" enctype='multipart/form-data' >
       <div class="col-5">
         <label for="nombre">Nombre</label>
-        <input class="abajo" type="text" name="nombre">
+        <input class="abajo" type="text" name="nombre"  value="<%= typeof producto !== 'undefined' ? producto.name : null %>">
         <label for="tipo">Tipo</label>
-        <input class="abajo" type="text" name="tipo">
+        <input class="abajo" type="text" name="tipo" value="<%= typeof producto !== 'undefined' ? producto.tipo : null %>">
         <label for="marca">Marca</label>
-        <input class="abajo" type="text" name="marca">
+        <input class="abajo" type="text" name="marca" value="<%= typeof producto !== 'undefined' ? producto.marca : null %>">
         <label for="tamaño">Tamaño/Talle</label>
-        <input class="abajo" type="text" name="tamaño">
+        <input class="abajo" type="text" name="tamaño" value="<%= typeof producto !== 'undefined' ? producto.tamaño : null %>">
         <label for="color">Color</label>
-        <input class="abajo" type="text" name="color">
+        <input class="abajo" type="text" name="color" value="<%= typeof producto !== 'undefined' ? producto.color : null %>">
         <label for="precio">Precio</label>
-        <input class="abajo" type="text" name="precio">
+        <input class="abajo" type="text" name="precio" value="<%= typeof producto !== 'undefined' ? producto.precio : null %>">
         <label for="stock">Stock</label>
-        <input class="abajo" type="text" name="stock">
+        <input class="abajo" type="text" name="stock" value="<%= typeof producto !== 'undefined' ? producto.stock : null %>">
         <label for="desc">Descripción Corta</label>
-        <input class="abajo" type="txt" name="desc">
+        <input class="abajo" type="txt" name="desc" value="<%= typeof producto !== 'undefined' ? producto.desc : null %>">
       </div>
       <div class="col-6 row cargaBotones justify-content-around">
         <div class="col-6">
           <label  for="descripcion">Descripción Larga</label>
-          <input  type="text" name="descripcion">
+          <input  type="text" name="descripcion" value="<%= typeof producto !== 'undefined' ? producto.descripcion : null %>">
         </div>
         <div class="col-6">
           <label  for="foto">Cargar Foto</label>
