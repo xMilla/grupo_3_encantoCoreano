@@ -2,70 +2,139 @@
 <%- include('partials/menu')%>
 
 
-<link rel="stylesheet" href="../../css/registro.css">
-  
-    
-    <div class="account-register-container">
-      <h1 class="account-register-title">Crea tu cuenta</h1>
-      
-    </div>
-    
-    <div class="account-register-form">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <form action="" method="POST">
-              
-              <div class="form-group-container">
-                
-                <div class="form-group">
-                  <p><label class="label-text"  for="nombre">Nombre</label></p> 
-                  <p><input  class="text-box" type="text" id="nombre" name="nombre"></p> 
-                </div>
-                
-                
-                <div class="form-group">
-                  <p><label class="label-text" for="apellido">Apellido</label></p> 
-                  <p><input class="text-box" type="text" id="apellido" name="apellido"></p>
-                </div>
-                
-                <div class="form-group">
-                  <p><label  class="label-text" for="email">Email</label></p> 
-                  <p><input class="text-box" type="text" id="email" name="email"></p>
-                </div>
-                
-                
-                
-                <div class="form-group">
-                  <p><label class="label-text"  for="contraseña">Contraseña</label></p> 
-                  <p><input  class="text-box" type="password" id="contraseña" name="contraseña"></p>
-                </div>
-                
-                
-                <input class="button-container" type="submit" value="ENVIAR" style="margin-left: 200px; margin-right: 200px">        
-                
-                
-              </div>
-              
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-     
-    
-    
-    
-    
-    
-    
-    
-  
-  
  
-
+    
+   
+<div class="container" style="margin-top:30px; margin-bottom: 30px;">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h2>Formulario de registro</h2>
+				<form method="POST" action="/registro" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Nombre completo:</b></label>
+								<input 
+									type="text" 
+									name="fullname" 
+									class="form-control
+									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+										<%= hasErrorGetMessage('fullname', errors) ? 'is-invalid' : null %> 
+									<% } %>
+									"
+									value="<%= typeof oldData !== 'undefined' ? oldData.fullname : null %>"
+								>
+								<i class="invalid-feedback">
+									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+										<%= hasErrorGetMessage('fullname', errors) ? hasErrorGetMessage('fullname', errors) : null %>
+									<% } %>
+								</i>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Correo electrónico:</b></label>
+								<input 
+									type="text" 
+									name="email" 
+									class="form-control
+									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+										<%= hasErrorGetMessage('email', errors) ? 'is-invalid' : null %> 
+									<% } %>
+									"
+									value="<%= typeof oldData !== 'undefined' ? oldData.email : null %>"
+								>
+								<i class="invalid-feedback">
+									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+									<%= hasErrorGetMessage('email', errors) ? hasErrorGetMessage('email', errors) : null %>
+									<% } %>
+								</i>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Password:</b></label>
+								<input 
+									type="password" 
+									name="password" 
+									class="form-control
+									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+										<%= hasErrorGetMessage('password', errors) ? 'is-invalid' : null %> 
+									<% } %>
+									"
+								>
+								<i class="invalid-feedback">
+									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+									<%= hasErrorGetMessage('password', errors) ? hasErrorGetMessage('password', errors) : null %>
+									<% } %>
+								</i>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Repetir Password:</b></label>
+								<input 
+									type="password" 
+									name="rePassword" 
+									class="form-control"
+								>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Clase Usuario</b></label>
+								<select 
+									name="Categoria" 
+									class="form-control"
+								>
+									<option value="">Elegí una categoria</option>
+									<%  
+										let categorias = [
+											{code: 'Adm', name: 'Administrador'},
+											{code: 'Vis', name: 'visita'},
+										
+										];
+									%>
+									<% for (const oneCat of categorias) { %>
+										<option value="<%= oneCat.code %>"> 
+											<%= oneCat.name %> 
+										</option>
+									<% } %>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Imagen de perfil:</b></label>
+								<div class="custom-file">
+									<input 
+										type="file" 
+										name="avatar"
+										class="custom-file-input
+										<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+											<%= hasErrorGetMessage('avatar', errors) ? 'is-invalid' : null %> 
+										<% } %>
+										"
+									>
+									<label class="custom-file-label">Choose file...</label>
+									<i class="invalid-feedback">
+										<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+										<%= hasErrorGetMessage('avatar', errors) ? hasErrorGetMessage('avatar', errors) : null %>
+										<% } %>
+									</i>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+              <button type="submit" class="btn btn-primary"  style="margin-left: 200px; margin-right: 200px">
+                Registrarse</button>
+						</div>
+					</div>
+				</form>
+ 
+    	</div>
+    </div>
+  </div>
   
   <script> src="js/bootstrap.js"</script>
   <script> src="js/jquery.js"</script>

@@ -20,17 +20,10 @@ app.set('view engine', 'ejs');
 app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 
 
-
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************
-const mainRouter = require('./routes/main');
-const loginRoutes = require('./routes/Login');
-const productsRoutes = require('./routes/productsRoutes');
-
-app.use('/', mainRouter);
-app.use('/products', productsRoutes);
-app.use('/login', loginRoutes);
-
+const mainRoutes = require('./routes/main');
+app.use('/', mainRoutes);
 
 
 // ************ DON'T TOUCH FROM HERE ************

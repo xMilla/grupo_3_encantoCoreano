@@ -75,4 +75,35 @@ function getProductById(id) {
 	return dataById;
 }
 
-module.exports = {getAll,generateId,storeData,getProductById}
+
+// Users File Path
+const usersFilePath = path.join(__dirname, '../data/users.json');
+
+// Helper Functions
+function getAllUsers () {
+	let usersFileContent = fs.readFileSync(usersFilePath, 'utf-8');
+	let usersArray;
+	if (usersFileContent == '') {
+		usersArray = [];
+	} else {
+		usersArray = JSON.parse(usersFileContent);
+	}
+	return usersArray;
+}
+
+function generateUserId () {
+	let users = getAllUsers();
+	if (users.length == 0) {
+		return 1;
+	}
+	let lastUser = users.pop();
+	return lastUser.id + 1;
+}
+
+function storeUser (userData) {
+	let users = getAllUsers();
+	users.push(userData);
+	fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+}
+
+module.exports = {getAll,generateId,storeData,getProductById, generateUserId , storeUser, getAllUsers}

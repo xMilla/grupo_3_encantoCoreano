@@ -1,10 +1,11 @@
-[{"id":1,"firstName":"Robb","lastName":"Purton","email":"rpurton0@vinaora.com","password":"hUsYxPl","category":"nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi","image":"ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui"},
-{"id":2,"firstName":"Nadean","lastName":"Le Houx","email":"nlehoux1@ca.gov","password":"H0wSLM","category":"montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl","image":"orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend"},
-{"id":3,"firstName":"Vivie","lastName":"Uphill","email":"vuphill2@cnn.com","password":"S6TzwAoY7WKV","category":"suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla","image":"maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at"},
-{"id":4,"firstName":"Brandy","lastName":"Colaton","email":"bcolaton3@irs.gov","password":"rOyYySDLJt1O","category":"tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis","image":"est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc"},
-{"id":5,"firstName":"Emmalynn","lastName":"Plaskett","email":"eplaskett4@posterous.com","password":"H7MOkB","category":"quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus","image":"consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer"},
-{"id":6,"firstName":"Alexandrina","lastName":"De la Perrelle","email":"adelaperrelle5@skyrock.com","password":"DHZU1UTD7","category":"congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam","image":"convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum"},
-{"id":7,"firstName":"Aleksandr","lastName":"Pauwel","email":"apauwel6@constantcontact.com","password":"duT3D1XV7X","category":"ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis","image":"cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes"},
-{"id":8,"firstName":"Dotti","lastName":"Asbury","email":"dasbury7@constantcontact.com","password":"8DQd0b8","category":"odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est","image":"ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam"},
-{"id":9,"firstName":"Zorina","lastName":"Fealey","email":"zfealey8@4shared.com","password":"142xq7","category":"in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis","image":"integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia"},
-{"id":10,"firstName":"Nelli","lastName":"Coast","email":"ncoast9@columbia.edu","password":"az1wrHIf","category":"quisque arcu libero rutrum ac lobortis vel dapibus at diam nam tristique tortor","image":"adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien"}]
+[
+ {
+  "id": 1,
+  "avatar": "lucila-isernia-1580591134445.jpg",
+  "fullname": "lucila isernia",
+  "email": "lisernia@gmail.com",
+  "password": "453543254542345",
+  "rePassword": "34532945823094529049",
+  "Categoria": "Adm"
+ }
+]
