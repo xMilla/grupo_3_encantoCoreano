@@ -106,4 +106,11 @@ function storeUser (userData) {
 	fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
 }
 
-module.exports = {getAll,generateId,storeData,getProductById, generateUserId , storeUser, getAllUsers}
+function getUserByEmail (email) {
+	let allUsers = getAllUsers();
+	let userFind = allUsers.find(oneUser => oneUser.user_email == email);
+	return userFind;
+}
+
+module.exports = {getAll,generateId,storeData,getProductById, generateUserId , storeUser,
+	 getAllUsers, getUserByEmail}

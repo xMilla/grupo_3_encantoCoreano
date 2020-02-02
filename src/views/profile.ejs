@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register Form</title>
+</head>
+<body>
+	
+	<%- include('partials/head')%>
+	<%- include('partials/menu')%>
+	
+	<p>Hola <%= user.name %></p>
+	<p>Email: <%= user.email %></p>
+	<img src="/images/avatars/<%= user.avatar %>" alt="">
+	<br>
+	<a href="/logout">SALIR</a>
+</body>
+</html>

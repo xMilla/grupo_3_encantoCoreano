@@ -62,6 +62,53 @@ const controller = {
 	
 }
 },
+
+processLogin: (req, res) => {
+	// Busco al usuario por email
+	let userToLogin = helperFunctions.getUserByEmail(req.body.email);
+
+	// Valido si existe el usuario
+	if(userToLogin != undefined) {
+		// Magia	if (bcrypt.compareSync(req.body.user_password, userToLogin.user_password))
+		if (userToLogin.password == userToLogin.password)
+		
+		{
+			// Borramos la contraseña del objeto usuario
+			delete userToLogin.password;
+			console.log(userToLogin);
+			// Pasamos al usuario a session
+			req.session.user = userToLogin;
+		 
+
+			if (req.body.remember) {
+				res.cookie('user', userToLogin.id, { maxAge: 180000});
+			}
+
+			// Redirección
+			return res.redirect('profile');
+		} else {
+			console.log(userToLogin);
+			res.send( "error" );
+		}
+	} else {
+		res.send('El usuario no existe');
+	}
+},
+
+profile: (req, res) => {
+	res.render('profile', {
+		user: req.session.user
+	});
+},
+logout: (req, res) => {
+	// Destruimos la session
+	req.session.destroy();
+	// Pisar la cookie
+	res.cookie('user', null, { maxAge: -1 });
+	// Redirección
+	return res.redirect('/login');
+}
+ 
 };
 
 
