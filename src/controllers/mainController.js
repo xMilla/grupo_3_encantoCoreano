@@ -85,7 +85,7 @@ processLogin: (req, res) => {
 			}
 
 			// Redirección
-			return res.redirect('profile');
+			return res.redirect('index');
 		} else {
 			console.log(userToLogin);
 			res.send( "error" );
@@ -95,8 +95,8 @@ processLogin: (req, res) => {
 	}
 },
 
-profile: (req, res) => {
-	res.render('profile', {
+index: (req, res) => {
+	res.render('index', {
 		user: req.session.user
 	});
 },
@@ -106,7 +106,7 @@ logout: (req, res) => {
 	// Pisar la cookie
 	res.cookie('user', null, { maxAge: -1 });
 	// Redirección
-	return res.redirect('/login');
+	return res.redirect('/index');
 }
  
 };

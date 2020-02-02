@@ -68,7 +68,7 @@ const loginController = {
 				}
 
 				// Redirección
-				return res.redirect('profile');
+				return res.redirect('index');
 			} else {
 				res.send('Datos incorrectos');
 			}
@@ -77,8 +77,8 @@ const loginController = {
 		}
 	},
 
-	profile: (req, res) => {
-		res.render('profile', {
+	index: (req, res) => {
+		res.render('index', {
 			user: req.session.user
 		});
 	},
@@ -88,7 +88,7 @@ const loginController = {
 		// Pisar la cookie
 		res.cookie('user', null, { maxAge: -1 });
 		// Redirección
-		return res.redirect('/login');
+		return res.redirect('/index');
 	}
 };
 

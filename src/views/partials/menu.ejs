@@ -27,7 +27,28 @@
           
           <div class="loginCarrito container">
             <div class="login row justify-content-center ">
-              <a class="col-6" href="/login"> <img class="img-user" src="../../images/circle-user.png" alt="img-user"> </a>   
+              
+
+              
+              <a class="col-6" href="/login"> 
+
+                <% if (typeof user  !== 'undefined') { %>
+                  <img class="img-user" src="/images/avatars/<%= user.avatar %>" alt="img-user"> 
+                  <p class="col-12">  <%= user.fullname %></p>
+                  <p class="col-6"   href="/logout">SALIR</p  >
+
+                  <% } %>
+
+                  <% if (typeof user   == 'undefined') { %>
+                    <img class="img-user" src="../../images/circle-user.png" alt="img-user"> 
+  
+                    <% } %>
+              
+   
+                
+                
+               
+              </a>   
               <a class="col-6" href="/Carrito"><img class="img-user" src="../../images/carrito.png" alt="carrito"></a> 
             </div>
           </div>

@@ -19,9 +19,9 @@ router.post('/registro', upload.single('avatar'), registerValidations, loginCont
 router.post('/users/login', loginController.processLogin);
 
 /* GET to /users/profile */
-router.get('/profile', authMiddleware, loginController.profile);
+router.get('/index', authMiddleware, loginController.index);
 /* GET to /users/profile */
-router.get('/users/profile', authMiddleware, loginController.profile);
+router.get('/users/index', authMiddleware, loginController.index);
 /* GET to /users/logout */
 router.get('/logout', loginController.logout);
 

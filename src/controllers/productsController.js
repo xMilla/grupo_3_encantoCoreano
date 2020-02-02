@@ -89,7 +89,14 @@ const productAddController = {
 		let productdet = helperFunctions.getProductById(req.params.idProducto);		
 		res.render('detalleProducto',{'producto':productdet});
 	},
-	
+	logout: (req, res) => {
+		// Destruimos la session
+		req.session.destroy();
+		// Pisar la cookie
+		res.cookie('user', null, { maxAge: -1 });
+		// Redirección
+		return res.redirect('/index');
+	},
 };
 
 module.exports = productAddController

@@ -4,6 +4,7 @@ const router = express.Router();
 
 // ************ Controller Require ************
 const mainController = require('../controllers/mainController');
+const productsController = require('../controllers/productsController');
 // ************ Controller Require ************
 const loginController = require('../controllers/loginController');
 
@@ -26,10 +27,39 @@ router.post('/login', mainController.processLogin);
 router.post('/users/login', mainController.processLogin);
  
  
-router.get('/profile', authMiddleware, loginController.profile);
+router.get('/index', authMiddleware, loginController.index);
 
 /* GET to /users/logout */
 router.get('/logout', loginController.logout);
 /* GET to /users/profile */
-router.get('/users/profile', authMiddleware, loginController.profile);
+router.get('/users/index', authMiddleware, loginController.index);
+
+
+
+/* GET - Producto-> /products/todos */
+router.get('/todos', productsController.products);
+
+/* GET - Producto-> /products/food */
+router.get('/food', productsController.food);
+
+/* GET - Producto-> /products/beauty */
+router.get('/beauty', productsController.beauty);
+
+/* GET - Producto-> /products/music */
+router.get('/music', productsController.music);
+
+
+/* GET - Producto-> /products/todos */
+router.get('/products/todos', productsController.products);
+
+/* GET - Producto-> /products/food */
+router.get('/products/food', productsController.food);
+
+/* GET - Producto-> /products/beauty */
+router.get('/products/beauty', productsController.beauty);
+
+/* GET - Producto-> /products/music */
+router.get('/products/music', productsController.music);
+
+ 
 module.exports = router;
