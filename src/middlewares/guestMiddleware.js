@@ -3,7 +3,7 @@ function guestMiddleware (req, res, next) {
 	if(req.session.user == undefined) {
 		return next();
 	}
-	return res.redirect('/users/profile');
+	return res.redirect('/index');
 }
 
 module.exports = guestMiddleware;

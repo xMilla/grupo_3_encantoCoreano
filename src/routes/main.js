@@ -19,20 +19,22 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 router.get('/', mainController.root);
 router.get('/carrito',mainController.carrito);
 router.get('/metodoDePago',mainController.metodoDePago);
-router.get('/login',mainController.login);
+router.get('/login',   guestMiddleware, mainController.login);
 router.get('/registro',mainController.registro);
-router.post('/registro', upload.single('avatar'), registerValidations, mainController.store);
-/* POST to /users/login */
-router.post('/login', mainController.processLogin);
-router.post('/users/login', mainController.processLogin);
- 
- 
 router.get('/index', authMiddleware, loginController.index);
 
 /* GET to /users/logout */
 router.get('/logout', loginController.logout);
 /* GET to /users/profile */
 router.get('/users/index', authMiddleware, loginController.index);
+
+router.post('/registro', upload.single('avatar'), registerValidations, mainController.store);
+/* POST to /users/login */
+router.post('/login', mainController.processLogin);
+router.post('/users/login', mainController.processLogin);
+ 
+ 
+
 
 
 

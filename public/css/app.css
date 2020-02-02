@@ -79,6 +79,18 @@ header{
    
  }
 
+ .registroBoton{
+  margin-top:30px; 
+  margin-bottom: 20px;  
+  font-family: Berlin Sans FB;
+  text-align: center;
+   
+  padding: 10px;
+  margin-left: 0;
+  font-size: 20px;
+  color: rgb(33, 18, 248);
+ }
+
  .search{
   max-width: 25%;
  }

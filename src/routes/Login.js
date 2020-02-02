@@ -12,7 +12,9 @@ const registerValidations = require('../middlewares/registerValidatorMiddleware'
 const upload = require('../middlewares/uploadMiddleware');
 
 /* GET - Login/registro */
-router.get('/login', loginController.login);
+/* GET to /users/login */
+ 
+router.get('/login',   guestMiddleware, loginController.login);
 router.get('/registro', loginController.registro);
 router.post('/registro', upload.single('avatar'), registerValidations, loginController.store);
 /* POST to /users/login */

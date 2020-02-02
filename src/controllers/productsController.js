@@ -95,7 +95,7 @@ const productAddController = {
 		// Pisar la cookie
 		res.cookie('user', null, { maxAge: -1 });
 		// Redirección
-		return res.redirect('/index');
+		return res.redirect('/login');
 	},
 };
 
