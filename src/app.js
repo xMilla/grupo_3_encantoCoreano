@@ -18,7 +18,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({
-  secret: 'lo que sea',
+  secret: 'register-login',
   resave: true,
   saveUninitialized: true
 }));
@@ -30,10 +30,17 @@ app.set('view engine', 'ejs');
 app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 
 
+
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************
-const mainRoutes = require('./routes/main');
-app.use('/', mainRoutes);
+const mainRouter = require('./routes/main');
+const userRoutes = require('./routes/userRoutes');
+const productsRoutes = require('./routes/productsRoutes');
+
+app.use('/', mainRouter);
+app.use('/products', productsRoutes);
+app.use('/user', userRoutes);
+
 
 
 // ************ DON'T TOUCH FROM HERE ************

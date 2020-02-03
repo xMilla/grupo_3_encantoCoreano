@@ -1,9 +1,8 @@
 function authMiddleware (req, res, next) {
-	// Si existe algo en la prop user de session
-	if(req.session.user != undefined) {
-		return next();
+	if (req.session.userId == undefined) {
+		return res.redirect('/user/login');
 	}
-	return res.redirect('/index');
+	next();
 }
 
 module.exports = authMiddleware;

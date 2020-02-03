@@ -74,8 +74,6 @@ function getProductById(id) {
 	let dataById = allData.find(data => data.id == id);
 	return dataById;
 }
-
-
 // Users File Path
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
@@ -100,17 +98,40 @@ function generateUserId () {
 	return lastUser.id + 1;
 }
 
-function storeUser (userData) {
-	let users = getAllUsers();
-	users.push(userData);
-	fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+function getUserById (id) {
+	let allUsers = getAllUsers();
+	let userById = allUsers.find(oneUser => oneUser.id == id);
+	return userById;
 }
 
 function getUserByEmail (email) {
 	let allUsers = getAllUsers();
+	console.log("maile: "+ email);
+	
 	let userFind = allUsers.find(oneUser => oneUser.user_email == email);
+	//let dataById = allData.find(data => data.id == id);
 	return userFind;
 }
 
+
+function storeUser (userData) {
+	// Traer a todos los usuarios
+	let allUsers = getAllUsers();
+	// Generar el ID y asignarlo al nuevo usuario
+	userData = {
+		id: generateUserId(),
+		...userData
+	};
+	// Insertar el nuevo usuario en el array de TODOS los usuarios
+	allUsers.push(userData);
+	// Volver a reescribir el users.json
+	fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, ' '));
+	// Finalmente, retornar la información del usuario nuevo
+	return userData;
+}
+
+
+
+
 module.exports = {getAll,generateId,storeData,getProductById, generateUserId , storeUser,
-	 getAllUsers, getUserByEmail}
+	 getAllUsers,getUserById, getUserByEmail}

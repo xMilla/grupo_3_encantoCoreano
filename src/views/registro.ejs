@@ -9,7 +9,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <h2>Formulario de registro</h2>
-				<form method="POST" action="/registro" enctype="multipart/form-data">
+				<form method="POST" action="/user/registro" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -135,11 +135,10 @@
     	</div>
     </div>
   </div>
-  
+  <%- include('partials/footer') %>
   <script> src="js/bootstrap.js"</script>
   <script> src="js/jquery.js"</script>
   <script> src="js/popper.js"</script>
 </body>
 
 </html>
-<%- include('partials/footer') %>

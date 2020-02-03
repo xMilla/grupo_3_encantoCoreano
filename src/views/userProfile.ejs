@@ -10,10 +10,13 @@
 	<%- include('partials/head')%>
 	<%- include('partials/menu')%>
 	
-	<p>Hola <%= user.name %></p>
+	<p>Hola <%= user.fullname %></p>
 	<p>Email: <%= user.email %></p>
-	<img src="/images/avatars/<%= user.avatar %>" alt="">
+	<div>
+		<img class="imgAvatar" src="/images/avatars/<%= user.avatar %>" alt="avatar">
+	</div>
+	
 	<br>
-	<a href="/logout">SALIR</a>
+	<a href="/user/logout">SALIR</a>
 </body>
 </html>

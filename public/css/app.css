@@ -79,18 +79,6 @@ header{
    
  }
 
- .registroBoton{
-  margin-top:30px; 
-  margin-bottom: 20px;  
-  font-family: Berlin Sans FB;
-  text-align: center;
-   
-  padding: 10px;
-  margin-left: 0;
-  font-size: 20px;
-  color: rgb(33, 18, 248);
- }
-
  .search{
   max-width: 25%;
  }
@@ -104,15 +92,6 @@ header{
    margin-bottom: 20px;
  }
 
- .account-register-form {
- 
-  background-color:
-  #fff;
-  border: 1px solid
-  #000;
-  
-
-}
  .carrito{
   margin-top: 60px;
   font-family: Berlin Sans FB;
@@ -227,6 +206,11 @@ margin-bottom: 5%;
    margin: auto;
    width: 90%;
  }
+
+ .imgAvatar{
+  margin: auto;
+  width: 10%;
+}
 
  @font-face {
   font-family: Berlin Sans FB;
