@@ -20,12 +20,17 @@
 				<li><a href="detalle/<%= producto.id%>">
 					<img   src="<%= producto.foto %>" alt="Imagen Producto" class="imgProducts"></li>
 				</a>
-                <form action="borrar/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button class="botonTachito"><img src="../../images/borrar_tachito.png" class="tachitoBorrar" alt="borrar producto"></button>
-                </form>
-                <form action="update/<%= producto.id %>" method="GET">
-                    <button class="botonTachito"><img src="../../images/actualizar_icono.jpg" class="tachitoBorrar" alt="borrar producto"></button>
-                </form>
+				<br>
+                <div class="container">
+					<div class="row justify-content-center botoncitos_update">
+						<form class="col-6" action="borrar/<%= producto.id %>?_method=DELETE" method="POST">
+							<button class="botonTachito"><img src="../../images/borrar_tachito.png" class="tachitoBorrar" alt="borrar producto"></button>
+						</form>
+						<form class="col-6" action="update/<%= producto.id %>" method="GET">
+							<button class="botonTachito"><img src="../../images/actualizar_icono.jpg" class="tachitoBorrar" alt="borrar producto"></button>
+						</form>
+					</div>
+				</div>
 			  </ul>	  
 			  
 			</div>

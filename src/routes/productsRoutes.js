@@ -57,10 +57,13 @@ router.post('/borrar/:idProducto', productsController.borrar);
 router.get('/update/:idProducto', productsController.update);
 
 /* GET - Producto-> /products/update/id*/
-router.get('/updatedata/:idProducto',upload.single('foto'), productsController.updateAdd);
+router.patch('/update/:idProducto', productsController.updateProcess);
+
+/* GET - Producto-> /products/update/id*/
+//router.get('/updatedata/:idProducto',upload.single('foto'), productsController.updateAdd);
 
 /* POST - Producto-> /products/update/id*/
-router.post('/updatedata/:idProducto',upload.single('foto'), productsController.updateAdd);
+//router.post('/updatedata/:idProducto',upload.single('foto'), productsController.updateAdd);
 
 /* GET - Producto-> /products/detalle */
 router.get('/detalle', productsController.detail);

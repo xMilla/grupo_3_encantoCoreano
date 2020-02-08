@@ -3,10 +3,10 @@
 
 <div class="cuerpoProductAdd container">
   <div>
-    <form  class="row justify-content-around" action="/products/updatedata/<%= producto.Id %> " method="POST" enctype='multipart/form-data' >
+    <form  class="row justify-content-around" action="/products/updatedata/<%= producto.Id %>?_method=PATCH " method="POST" enctype='multipart/form-data' >
       <div class="col-5">
         <label for="nombre">Nombre</label>
-        <input class="abajo" type="text" name="nombre"  value="<%= typeof producto !== 'undefined' ? producto.name : null %>">
+        <input class="abajo" type="text" name="nombre"  value="<%= typeof producto !== 'undefined' ? producto.nombre : null %>">
         <label for="tipo">Tipo</label>
         <input class="abajo" type="text" name="tipo" value="<%= typeof producto !== 'undefined' ? producto.tipo : null %>">
         <label for="marca">Marca</label>

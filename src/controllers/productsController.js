@@ -44,7 +44,7 @@ const productAddController = {
 		
 		res.render('productUpdate',{'producto': helperFunctions.getProductById(req.params.idProducto)});
 	},
-	updateAdd: (req, res) => {
+	updateProcess: (req, res) => {
 		// Asignar el nombre final de la imagen
 		req.body.foto = req.file.filename;
 
