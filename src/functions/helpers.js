@@ -108,8 +108,8 @@ function getUserByEmail (email) {
 	let allUsers = getAllUsers();
 	console.log("maile: "+ email);
 	
-	let userFind = allUsers.find(oneUser => oneUser.user_email == email);
-	//let dataById = allData.find(data => data.id == id);
+	let userFind = allUsers.find(oneUser => oneUser.email == email);
+	
 	return userFind;
 }
 

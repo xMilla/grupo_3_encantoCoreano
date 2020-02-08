@@ -16,5 +16,41 @@
   "rePassword": "12345",
   "Categoria": "Adm",
   "avatar": "../../images/k-music/1580702537716.jpg"
+ },
+ {
+  "id": 3,
+  "fullname": "",
+  "email": "xime.a.milla@gmail.com",
+  "password": "$2b$10$XgB4MTGZD1CuSn10/zgF3uA40TGdhugl4OPzg2M03dcxh/5tw4/36",
+  "rePassword": "",
+  "Categoria": "",
+  "avatar": "../../images/k-music/1580947069700.jpg"
+ },
+ {
+  "id": 4,
+  "fullname": "",
+  "email": "",
+  "password": "$2b$10$X1KleZSRCstBhIU2.9D0Hex2ZePFDPSipHN2..gr2qKI3GUR9aX/i",
+  "rePassword": "",
+  "Categoria": "",
+  "avatar": "../../images/k-music/1580947166653.ppsx"
+ },
+ {
+  "id": 5,
+  "fullname": "chelin",
+  "email": "chelin@chelin",
+  "password": "$2b$10$Jrk/KWQLemL.hYhnMgNCFOV3Xo.IsLUUxBNnYvhBH0KFZjYQxIRO2",
+  "rePassword": "chelin",
+  "Categoria": "Adm",
+  "avatar": "../../images/k-music/1581132185286.jpg"
+ },
+ {
+  "id": 6,
+  "fullname": "",
+  "email": "",
+  "password": "$2b$10$kHY08wehCTXjrssdp1lxBucnnEGARFZvAwzuf77Zv9oVtcMcBOBJW",
+  "rePassword": "",
+  "Categoria": "",
+  "avatar": "../../images/k-music/1581132736432.jpg"
  }
 ]

@@ -40,7 +40,6 @@ const userController = {
 	processLogin: (req, res) => {
 		// Busco al usuario por email
 		let userToLogin = helperFunctions.getUserByEmail(req.body.user_email);
-		console.log("req.body.user_email: " + req.body.user_email);
 		
 		// Valido si existe el usuario
 		if(userToLogin != undefined) {
@@ -50,7 +49,7 @@ const userController = {
 
 				// Setear la cookie
 				if (req.body.remember) {
-					res.cookie('user', userToLogin.id, { maxAge: 180000});
+					res.cookie('userCookie', userToLogin.id, { maxAge: 180000});
 				}
 
 				// Redireccionamos al visitante a su perfil
@@ -75,9 +74,9 @@ const userController = {
 		// Destruimos la session
 		req.session.destroy();
 		// Pisar la cookie
-		res.cookie('user', null, { maxAge: -1 });
+		res.cookie('userCookie', null, { maxAge: -1 });
 		// Redirección
-		return res.redirect('/');
+		return res.redirect('/user/profile');
 	}
 };
 
