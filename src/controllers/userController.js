@@ -13,7 +13,25 @@ const userController = {
 	},
 	store: (req, res) => {
 
-		// Hash del password
+		const hasErrorGetMessage = (field, errors) => {
+			for (let oneError of errors) {
+				if (oneError.param == field) {
+					return oneError.msg;
+				}
+			}
+			return false;
+		}
+				
+		let errorsResult = validationResult(req);
+
+		if ( !errorsResult.isEmpty() ) {
+			return res.render('registro', {
+				errors: errorsResult.array(),
+				hasErrorGetMessage,
+				oldData: req.body
+			});
+		} else {
+			// Hash del password
 		req.body.password = bcrypt.hashSync(req.body.password, 10);
 
 		// Eliminar la propiedad re_password
@@ -34,7 +52,9 @@ const userController = {
 		res.cookie('userCookie', user.id, { maxAge: 60000 * 60 });
 
 		// Redirección al profile
-		return res.redirect('/user/profile');
+		return res.redirect('/user/profile');;
+		}
+		
 		
 	},
 	processLogin: (req, res) => {

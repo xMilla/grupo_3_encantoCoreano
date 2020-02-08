@@ -52,5 +52,14 @@
   "rePassword": "",
   "Categoria": "",
   "avatar": "../../images/k-music/1581132736432.jpg"
+ },
+ {
+  "id": 7,
+  "fullname": "lu",
+  "email": "lucia@lucia.com",
+  "password": "$2b$10$jJNMDceFrjC4fKWPaHohzOBCmNYkji3w.kVpFpVrE2N57jpAO6s6i",
+  "rePassword": "12345",
+  "Categoria": "Adm",
+  "avatar": "../../images/k-music/1581134005409.jpg"
  }
 ]
