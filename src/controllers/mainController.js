@@ -1,3 +1,6 @@
+const db = require('../database/models/');
+const Products = db.products;
+const Users = db.products;
 const fs = require('fs');
 const path = require('path');
 const helperFunctions = require('../functions/helpers');
@@ -6,7 +9,6 @@ let productsData = helperFunctions.getAll('todos');
 
 const controller = {
 	root: (req, res) => {
-		console.log("hola");
 		res.render('index',{'productos':productsData});
 	},
 	carrito: (req, res) => {

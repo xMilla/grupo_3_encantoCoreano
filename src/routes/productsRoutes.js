@@ -45,25 +45,20 @@ router.get('/add', productsController.add);
 router.get('/add/:idProducto', productsController.add);
 
 /* POST - Producto-> /products/add */
-router.post('/add', upload.single('foto'), productsController.addProcess);
+//router.post('/add', upload.single('foto'), productsController.addProcess);
+router.post('/add', productsController.addProcess);
 
 /* GET - Producto-> /products/todosAdmin */
 router.get('/todosAdmin', productsController.todosAdmin);
 
-/* POST - Producto-> /products/borrar/id*/
-router.post('/borrar/:idProducto', productsController.borrar);
+/* Delete - Producto-> /products/borrar/id*/
+router.delete('/borrar/:idProducto', productsController.borrar);
 
 /* GET - Producto-> /products/update/id*/
 router.get('/update/:idProducto', productsController.update);
 
 /* GET - Producto-> /products/update/id*/
 router.patch('/update/:idProducto', productsController.updateProcess);
-
-/* GET - Producto-> /products/update/id*/
-//router.get('/updatedata/:idProducto',upload.single('foto'), productsController.updateAdd);
-
-/* POST - Producto-> /products/update/id*/
-//router.post('/updatedata/:idProducto',upload.single('foto'), productsController.updateAdd);
 
 /* GET - Producto-> /products/detalle */
 router.get('/detalle', productsController.detail);

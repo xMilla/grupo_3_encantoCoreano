@@ -1,3 +1,5 @@
+const db = require('../database/models/');
+const Users = db.products;
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator'); 
@@ -52,8 +54,8 @@ const loginController = {
 
 		// Valido si existe el usuario
 		if(userToLogin != undefined) {
-			// Magia	if (bcrypt.compareSync(req.body.user_password, userToLogin.user_password))
-			if (req.body.user_password == userToLogin.password)
+		    if (bcrypt.compareSync(req.body.user_password, userToLogin.user_password))
+			//if (req.body.user_password == userToLogin.password)
 			
 			{
 				// Borramos la contraseña del objeto usuario

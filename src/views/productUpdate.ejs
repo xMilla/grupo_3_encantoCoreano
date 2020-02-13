@@ -6,7 +6,7 @@
     <form  class="row justify-content-around" action="/products/updatedata/<%= producto.Id %>?_method=PATCH " method="POST" enctype='multipart/form-data' >
       <div class="col-5">
         <label for="nombre">Nombre</label>
-        <input class="abajo" type="text" name="nombre"  value="<%= typeof producto !== 'undefined' ? producto.nombre : null %>">
+        <input class="abajo" type="text" name="nombre"  value="<%= typeof producto !== 'undefined' ? producto.nombre_product : null %>">
         <label for="tipo">Tipo</label>
         <input class="abajo" type="text" name="tipo" value="<%= typeof producto !== 'undefined' ? producto.tipo : null %>">
         <label for="marca">Marca</label>
@@ -19,13 +19,13 @@
         <input class="abajo" type="text" name="precio" value="<%= typeof producto !== 'undefined' ? producto.precio : null %>">
         <label for="stock">Stock</label>
         <input class="abajo" type="text" name="stock" value="<%= typeof producto !== 'undefined' ? producto.stock : null %>">
-        <label for="desc">Descripción Corta</label>
-        <input class="abajo" type="txt" name="desc" value="<%= typeof producto !== 'undefined' ? producto.desc : null %>">
+        <label for="descripcion">Descripción Corta</label>
+        <input class="abajo" type="txt" name="desc" value="<%= typeof producto !== 'undefined' ? producto.descripcion : null %>">
       </div>
       <div class="col-6 row cargaBotones justify-content-around">
         <div class="col-6">
-          <label  for="descripcion">Descripción Larga</label>
-          <input  type="text" name="descripcion" value="<%= typeof producto !== 'undefined' ? producto.descripcion : null %>">
+          <label  for="descripcion_larga">Descripción Larga</label>
+          <input  type="text" name="descripcion_larga" value="<%= typeof producto !== 'undefined' ? producto.descripcion : null %>">
         </div>
         <div class="col-6">
           <label  for="foto">Cargar Foto</label>
