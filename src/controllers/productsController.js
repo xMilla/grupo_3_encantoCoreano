@@ -1,6 +1,8 @@
 const db = require('../database/models/');
 const Products = db.products;
-const Categories = db.Categories;
+const Categories = db.categories;
+const Brands = db.brands;
+;
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
@@ -27,8 +29,9 @@ let foodData = helperFunctions.getAll('food');
 
 const productAddController = {
 	products: (req, res) => {
-		//res.render('todos',{'productos':productsData});
-		Products
+
+		 
+		 Products
 			.findAll()
 			.then(products => {
 				
@@ -37,11 +40,12 @@ const productAddController = {
 					'productos' : products
 				});
 			})
-			.catch(error => res.send(error));
+			.catch(error => res.send(error)); 
+
+			
 	},
 	food: (req, res) => {
-		
-		//res.render('food',{'productos': foodData  });
+		/*
 		Products
 			.findByPk(req.body.id_category, {
 				include: ['categories']
@@ -52,7 +56,7 @@ const productAddController = {
 					'productos' : products
 				});
 			})
-			.catch(error => res.send(error));
+			.catch(error => res.send(error));*/
 	},
 	beauty: (req, res) => {
 		
@@ -62,7 +66,22 @@ const productAddController = {
 		res.render('music',{'productos':musicData});
 	},
 	add: (req, res) => {
-		res.render('productAdd');
+
+		let brands = Brands.findAll();
+		let categories = Categories.findAll();
+
+		Promise
+			.all([brands, categories])
+			.then(results => {
+				res.render('productAdd', {
+					title: 'Product Cate',
+					brands: results[0],
+					categories: results[1]
+				});
+			})
+			.catch(error => res.send(error));
+
+		return;
 	},
 	update: (req, res) => {
 		
@@ -86,17 +105,14 @@ const productAddController = {
 
 	},
 	addProcess: (req, res) => {
-		//console.log("body: "+ req.body);
-		
 		Products
-			.create(req.body)
-			.then(product => {
-				console.log(product);
-				
-				//return res.redirect(`/products/${product.id}`);
-				return res.redirect('/products/todosAdmin');
-			})
-			.catch(error => res.send(error));
+		.create(req.body)
+		.then(product => {
+			// insertar en la pivot
+			product.addCategories(req.body.categories);
+			return res.redirect('/products/todosAdmin');
+		})
+		.catch(error => res.send(error));
 	},
 	borrar: function (req, res){
 		
@@ -126,7 +142,7 @@ const productAddController = {
 		//let productdet = helperFunctions.getProductById(req.params.idProducto);		
 		//res.render('detalleProducto',{'producto':productdet});
 		Products
-			.findByPk(req.params.id)
+			.findByPk(req.params.idProducto)
 			.then( product => {
 				return res.render('detalleProducto', { 
 					'producto' : product

@@ -42,12 +42,14 @@ router.get('/music', productsController.music);
 router.get('/add', productsController.add);
 
 /* GET - Producto-> /products/add */
+
 router.get('/add/:idProducto', productsController.add);
 
 /* POST - Producto-> /products/add */
 //router.post('/add', upload.single('foto'), productsController.addProcess);
+router.post('/add/:idProducto', productsController.addProcess);
+ 
 router.post('/add', productsController.addProcess);
-
 /* GET - Producto-> /products/todosAdmin */
 router.get('/todosAdmin', productsController.todosAdmin);
 

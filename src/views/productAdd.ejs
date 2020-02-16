@@ -7,10 +7,20 @@
       <div class="col-5">
         <label for="nombre_product">Nombre</label>
         <input class="abajo" type="text" name="nombre_product">
-        <label for="idCategory">Tipo</label>
-        <input class="abajo" type="text" name="idCategory">
-        <label for="idMarca">Marca</label>
-        <input class="abajo" type="text" name="idMarca">
+        <label for="categories">Tipo</label><br>
+        <select name="categories" >
+          <option value="">Elegí varias categorías</option>
+          <% categories.forEach(oneCategory => { %>
+          <option value="<%= oneCategory.id %>"><%= oneCategory.nombre %></option>
+          <% }) %>
+        </select><br>
+        <label for="brandId">Marca</label><br>
+        <select name="brandId">
+          <option value="">Elegí una marca</option>
+          <% brands.forEach(oneBrand => { %>
+          <option value="<%= oneBrand.id %>"><%= oneBrand.tipo %></option>
+          <% }) %>
+        </select><br>
         <label for="tamaño">Tamaño/Talle</label>
         <input class="abajo" type="text" name="tamaño">
         <label for="color">Color</label>

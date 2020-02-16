@@ -1,17 +1,21 @@
 module.exports = (sequelize, DataTypes) => {
-	const category = sequelize.define('categories', {
+	let alias = 'categories';
+
+	let columns = {
 		id: {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
-			autoIncrement: true
+			allowNull: false,
+			autoIncrement: true,
 		},
 		nombre: DataTypes.STRING,
-		idProduct: DataTypes.INTEGER,
-	}, {
-		 tableName: 'categories',
-		 timestamps: false
-	});
+	};
 
+	const category = sequelize.define(alias, columns);
+
+	category.associate = (models) => {
+		// hasMany
+	}
 
 	return category;
 }
