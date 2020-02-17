@@ -3,7 +3,7 @@ const { check } = require('express-validator');
 
 module.exports = [
 	// validando campo nombre
-	check('fullname', 'El nombre es obligatorio').notEmpty(),
+	check('fullName', 'El nombre es obligatorio').notEmpty(),
 
 	// validando campo email
 	check('email')

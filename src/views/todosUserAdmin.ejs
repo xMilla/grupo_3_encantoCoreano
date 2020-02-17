@@ -1,0 +1,48 @@
+<%- include('partials/head')%>
+<%- include('partials/menuAdmin')%>
+
+	<!-- todos los usuarios -->
+	<div >
+		<h1 ></h1>
+		<p > </p>
+	  </div>
+	  <div class="container">
+		<div class="row text-center">
+		  <% users.forEach(function (user) { %>
+		  <div class="col-sm-3 card mb-3 box-shadow">
+			<div class="card-header">
+			  <h4 class="my-0 font-weight-normal"><%= user.fullName %></h4>
+			</div>
+			<div class="card-body">
+			
+			  <h1 class="card-title pricing-card-title"> $<%= user.email %> <small class="text-muted"></small></h1>
+			  <ul class="list-unstyled mt-3 mb-4 listaprod">
+				<li><a href="detalle/<%= user.id%>">
+					<img   src="<%= user.avatar %>" alt="Avatar" class="imgProducts"></li>
+				</a>
+				<br>
+                <div class="container">
+					<div class="row justify-content-center botoncitos_update">
+					 
+						<hr>
+					<form action="/user/<%= user.id %>?_method=DELETE" method="POST">
+					<h6>¿Querés eliminar este User?</h6>
+						<button type="submit">Borrar User</button>
+					</form>
+					</div>
+				</div>
+			  </ul>	  
+			  
+			</div>
+		  </div>
+		  <% }) %>
+		</div>
+		
+	  </div>
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>

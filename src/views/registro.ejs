@@ -1,10 +1,7 @@
 <%- include('partials/head')%>
 <%- include('partials/menu')%>
 
-
  
-    
-   
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
   <div class="row justify-content-center">
     <div class="col-md-10">
@@ -16,7 +13,7 @@
 								<label><b>Nombre completo:</b></label>
 								<input 
 									type="text" 
-									name="fullname" 
+									name="fullName" 
 									class="form-control
 									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
 										<%= hasErrorGetMessage('fullname', errors) ? 'is-invalid' : null %> 
@@ -84,7 +81,7 @@
 							<div class="form-group">
 								<label><b>Clase Usuario</b></label>
 								<select 
-									name="Categoria" 
+									name="categoria" 
 									class="form-control"
 								>
 									<option value="">Elegí una categoria</option>
@@ -125,6 +122,41 @@
 								</div>
 							</div>
 						</div>
+
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Direccion:</b></label><br> 
+								<input 
+								type="text" 
+								name="direccion" 
+								>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Ciudad:</b></label><br> 
+								<input 
+								type="text" 
+								name="ciudad" 
+								>
+							</div>
+						</div>
+
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Pais:</b></label><br> 
+								<input 
+								type="text" 
+								name="pais" 
+								>
+							</div>
+						</div>
+
+
+
 						<div class="col-12">
               <button type="submit" class="btn btn-primary"  style="margin-left: 200px; margin-right: 200px">
                 Registrarse</button>

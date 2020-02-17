@@ -38,12 +38,15 @@ router.post('/login',userController.processLogin);
 
 /* GET - /user/registro */
 router.get('/registro', guestMiddleware, userController.registro);
+router.get('/products/user/registro', guestMiddleware, userController.registro);
 
 /* POST - user/registro*/ 
 router.post('/registro', upload.single('avatar'),registerValidations, userController.store);
 
-
+/* GET - Producto-> /products/todosAdmin */
+router.get('/todosUserAdmin', userController.ListarAdm);
  /*GET to /user/logout */
 router.get('/logout', userController.logout);
-
+// Eliminar - DELETE - destroy
+router.delete('/:id', userController.destroy);
 module.exports = router;

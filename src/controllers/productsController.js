@@ -45,18 +45,32 @@ const productAddController = {
 			
 	},
 	food: (req, res) => {
-		/*
-		Products
-			.findByPk(req.body.id_category, {
-				include: ['categories']
-			})
-			.then(product => {
-				return res.render('food', { 
-					title: `Food`,
-					'productos' : products
+		let brands = Brands.findAll(
+
+		 	
+		);
+		let categories = Categories.findAll({
+			where:{
+			nombre:'food'
+
+		  }});
+		let product = Products.findAll( 
+			 );
+		Promise
+			.all([brands, categories , product])
+			.then(results => {
+				res.render('todos', {
+					title: 'Product Create',
+					brands: results[0],
+					categories: results[1],
+					productos: results[2]
 				});
 			})
-			.catch(error => res.send(error));*/
+			.catch(error => res.send(error));
+
+		return;
+		 
+		 
 	},
 	beauty: (req, res) => {
 		
@@ -139,8 +153,7 @@ const productAddController = {
 			.catch(error => res.send(error));
 	},
 	detail: (req, res) => {
-		//let productdet = helperFunctions.getProductById(req.params.idProducto);		
-		//res.render('detalleProducto',{'producto':productdet});
+	 
 		Products
 			.findByPk(req.params.idProducto)
 			.then( product => {
@@ -149,6 +162,8 @@ const productAddController = {
 				});
 			})
 			.catch(error => res.send(error));
+
+
 	},
 	
 };
