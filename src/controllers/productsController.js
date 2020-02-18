@@ -44,7 +44,21 @@ const productAddController = {
 
 			
 	},
-	food: (req, res) => {
+	byCategory: (req, res) => {
+		// return res.send("sfsd")
+
+		Categories.findAll({
+			where:{
+				nombre:req.params.cat	
+			},
+			include: ["products"]
+		})
+		.then(result => {	
+			return res.send(result);
+		})
+
+		return
+		/*
 		let brands = Brands.findAll(
 
 		 	
@@ -57,6 +71,7 @@ const productAddController = {
 		let product = Products.findAll( 
 			 );
 		Promise
+		
 			.all([brands, categories , product])
 			.then(results => {
 				res.render('todos', {
@@ -69,7 +84,7 @@ const productAddController = {
 			.catch(error => res.send(error));
 
 		return;
-		 
+		*/
 		 
 	},
 	beauty: (req, res) => {
@@ -130,12 +145,17 @@ const productAddController = {
 	},
 	borrar: function (req, res){
 		
-		//return res.redirect('/products/todosAdmin');
-		Products
-			.findByPk(req.params.id)
+			//return res.redirect('/products/todosAdmin');
+			Products
+			.findByPk(req.params.idProducto, {
+				include: ["categories"]
+			})
 			.then(product => {
+				// return res.send(product.categories)
+				product.removeCategories(product.categories);
 				product.destroy();
 				return res.redirect('/products/todosAdmin');
+				
 			})
 			.catch(error => res.send(error));
 	},

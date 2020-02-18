@@ -29,17 +29,14 @@ let upload = multer({ storage: diskStorage })
 /* GET - Producto-> /products/todos */
 router.get('/todos', productsController.products);
 
+
 /* GET - Producto-> /products/food */
-router.get('/food', productsController.food);
 
-/* GET - Producto-> /products/beauty */
-router.get('/beauty', productsController.beauty);
-
-/* GET - Producto-> /products/music */
-router.get('/music', productsController.music);
 
 /* GET - Producto-> /products/add */
 router.get('/add', productsController.add);
+
+
 
 /* GET - Producto-> /products/add */
 
@@ -67,6 +64,7 @@ router.get('/detalle', productsController.detail);
 
 /* GET - Producto-> /products/detalle/id */
 router.get('/detalle/:idProducto', productsController.detail);
+router.get('/:cat', productsController.byCategory);
 
 
 module.exports = router;
