@@ -30,7 +30,7 @@ const registerValidations = require('../middlewares/registerValidatorMiddleware'
 /* GET - user/profile */
 router.get('/profile',authMiddleware,userController.profile);
 router.get('/editUser/:id',userController.edit);
-router.post('/userEdit/:id',userController.update);
+router.post('/editUser/:id',userController.update);
 /* GET - user/login */
 router.get('/login', guestMiddleware, userController.login);
 
