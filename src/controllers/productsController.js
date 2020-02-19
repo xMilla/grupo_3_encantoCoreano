@@ -106,7 +106,9 @@ const productAddController = {
 		// Asignar el nombre final de la imagen
 	 
 		Products
-		.update(req.body.nombre_product,
+		.update({
+			nombre_product: req.body.nombre_product},
+			
 			{
 
                 where:{ id: req.params.idProducto}
