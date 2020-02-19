@@ -54,37 +54,11 @@ const productAddController = {
 			include: ["products"]
 		})
 		.then(result => {	
-			return res.send(result);
+		   return	res.render(req.params.cat,{'productos': result  });
 		})
 
-		return
-		/*
-		let brands = Brands.findAll(
-
-		 	
-		);
-		let categories = Categories.findAll({
-			where:{
-			nombre:'food'
-
-		  }});
-		let product = Products.findAll( 
-			 );
-		Promise
-		
-			.all([brands, categories , product])
-			.then(results => {
-				res.render('todos', {
-					title: 'Product Create',
-					brands: results[0],
-					categories: results[1],
-					productos: results[2]
-				});
-			})
-			.catch(error => res.send(error));
-
-		return;
-		*/
+		.catch(error => res.send(error)); 
+			 
 		 
 	},
 	beauty: (req, res) => {

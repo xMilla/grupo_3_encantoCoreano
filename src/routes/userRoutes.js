@@ -29,7 +29,8 @@ const registerValidations = require('../middlewares/registerValidatorMiddleware'
 
 /* GET - user/profile */
 router.get('/profile',authMiddleware,userController.profile);
-
+router.get('/editUser/:id',userController.edit);
+router.post('/userEdit/:id',userController.update);
 /* GET - user/login */
 router.get('/login', guestMiddleware, userController.login);
 
@@ -37,7 +38,7 @@ router.get('/login', guestMiddleware, userController.login);
 router.post('/login',userController.processLogin);
 
 /* GET - /user/registro */
-router.get('/registro', guestMiddleware, userController.registro);
+router.get('/registro',   userController.registro);
 router.get('/products/user/registro', guestMiddleware, userController.registro);
 
 /* POST - user/registro*/ 

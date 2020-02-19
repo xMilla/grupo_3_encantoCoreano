@@ -114,8 +114,9 @@ const userController = {
 		
 	 
 	profile: (req, res) => {
-		let userLogged =  helperFunctions.getUserById(req.session.userId);
-		res.render('userProfile', { 'user':userLogged });
+		//let userLogged =  helperFunctions.getUserById();
+		///ver esto  
+		res.render('login', { 'users':{} });
 	},
 	index: (req, res) => {
 		res.render('index', {
@@ -157,7 +158,48 @@ const userController = {
 				return res.redirect('/user/todosUserAdmin');
 			})
 			.catch(error => res.send(error));
-	}
+	},
+
+
+	edit: (req, res) => {
+		Users
+			.findByPk(req.params.id, {
+			 
+			})
+			.then(user => {
+				return res.render('editUser', { 
+					title: 'users  List',
+					'user' : user
+				});
+				 
+			 
+			})
+			.catch(error => res.send(error));
+	},
+update:(req, res) => {
+	Users
+		.update(req.body,
+			{
+
+                where:{ id: req.params.id}
+
+			}
+			
+			)
+		.then(users => {
+ 
+	
+			// Redirección al profile
+			 return res.redirect('/user/todosUserAdmin');;
+		 
+		}
+		
+		
+		)
+		.catch(error => res.send(error));
+      
+		}
+		
 };
 
 module.exports = userController
