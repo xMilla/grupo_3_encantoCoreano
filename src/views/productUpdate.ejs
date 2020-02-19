@@ -3,42 +3,40 @@
 
 <div class="cuerpoProductAdd container">
   <div>
-    <form  class="row justify-content-around" action="/products/updatedata/<%= producto.Id %>?_method=PATCH " method="POST" enctype='multipart/form-data' >
+    <form class=" " method="POST" 
+    action="/editProd/:<%= product.id%>"    ></form>
+  
+    
       <div class="col-5">
-        <label for="nombre">Nombre</label>
-        <input class="abajo" type="text" name="nombre"  value="<%= typeof producto !== 'undefined' ? producto.nombre_product : null %>">
-        <label for="tipo">Tipo</label>
-        <input class="abajo" type="text" name="tipo" value="<%= typeof producto !== 'undefined' ? producto.tipo : null %>">
-        <label for="marca">Marca</label>
-        <input class="abajo" type="text" name="marca" value="<%= typeof producto !== 'undefined' ? producto.marca : null %>">
+        <label for="nombre_product">Nombre</label>
+        <input class="abajo" type="text" name="nombre_product" value="<%= product.nombre_product%>" >
+         
+         
         <label for="tamaño">Tamaño/Talle</label>
-        <input class="abajo" type="text" name="tamaño" value="<%= typeof producto !== 'undefined' ? producto.tamaño : null %>">
+        <input class="abajo" type="text" name="tamaño"  value="<%= product.tamaño%>">
         <label for="color">Color</label>
-        <input class="abajo" type="text" name="color" value="<%= typeof producto !== 'undefined' ? producto.color : null %>">
+        <input class="abajo" type="text" name="color"  value="<%= product.color%>">
         <label for="precio">Precio</label>
-        <input class="abajo" type="text" name="precio" value="<%= typeof producto !== 'undefined' ? producto.precio : null %>">
+        <input class="abajo" type="text" name="precio"  value="<%= product.precio%>">
         <label for="stock">Stock</label>
-        <input class="abajo" type="text" name="stock" value="<%= typeof producto !== 'undefined' ? producto.stock : null %>">
+        <input class="abajo" type="text" name="stock"  value="<%= product.stock%>">
         <label for="descripcion">Descripción Corta</label>
-        <input class="abajo" type="txt" name="desc" value="<%= typeof producto !== 'undefined' ? producto.descripcion : null %>">
+        <input class="abajo" type="txt" name="descripcion"  value="<%= product.descripcion%>">
       </div>
       <div class="col-6 row cargaBotones justify-content-around">
         <div class="col-6">
           <label  for="descripcion_larga">Descripción Larga</label>
-          <input  type="text" name="descripcion_larga" value="<%= typeof producto !== 'undefined' ? producto.descripcion : null %>">
+          <input  type="text" name="descripcion_larga"  value="<%= product.descripcion_larga%>">
         </div>
-        <div class="col-6">
-          <label  for="foto">Cargar Foto</label>
-          <input  type="file" name="foto">
-        </div>
-        <input class="col-3 botoncito" type="submit" value="Agregar">
-        <input class="col-3 botoncito" type="submit" value="Actualizar">
-        <input class="col-3 botoncito" type="reset" value="Borrar">
-        <input class="col-4 botoncito" type="button" value="Cancelar">
+      
+  
+        <input class=" " type="submit" value="Actualizar">
+       
       </div>
     </form>
   </div>
 </div>
+
 
 
 

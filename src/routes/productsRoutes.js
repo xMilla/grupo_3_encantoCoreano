@@ -57,7 +57,7 @@ router.delete('/borrar/:idProducto', productsController.borrar);
 router.get('/update/:idProducto', productsController.update);
 
 /* GET - Producto-> /products/update/id*/
-router.patch('/update/:idProducto', productsController.updateProcess);
+router.post('/editProd/:idProducto', productsController.updateProcess);
 
 /* GET - Producto-> /products/detalle */
 router.get('/detalle', productsController.detail);

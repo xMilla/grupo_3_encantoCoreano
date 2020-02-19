@@ -87,24 +87,46 @@ const productAddController = {
 		return;
 	},
 	update: (req, res) => {
-		
-		res.render('productUpdate',{'producto': helperFunctions.getProductById(req.params.idProducto)});
+		let brands = Brands.findAll();
+		let categories = Categories.findAll();
+		//res.render('productUpdate',{'producto': helperFunctions.getProductById(req.params.idProducto)});
+		Products
+			.findByPk(req.params.idProducto)
+			.then( product => {
+				return res.render('ProductUpdate', { 
+					'product' : product,
+					'brands' : brands,
+					'categories' : categories 
+
+				});
+			})
+			.catch(error => res.send(error));
 	},
 	updateProcess: (req, res) => {
 		// Asignar el nombre final de la imagen
-		req.body.foto = req.file.filename;
+	 
+		Products
+		.update(req.body.nombre_product,
+			{
 
-		// Guardar el producto y como la función retorna la data lo almacenamos en ela variable "product"
-		if(req.body.idProducto != ' '){
-			req.body.id = req.params.idProducto;			
-			helperFunctions.storeData(req.body,'update');
-		}
-		else{
-		    helperFunctions.storeData(req.body,'add');
+                where:{ id: req.params.idProducto}
+
+			}
+			
+			)
+		.then(products => {
+ 
+	
+				// Redirección para seguir agregando productos	
+		return res.redirect('/products/todosAdmin');
+		 
 		}
 		
-		// Redirección para seguir agregando productos	
-		return res.redirect('/products/todosAdmin');
+		
+		)
+		.catch(error => res.send(error));
+		
+	
 
 	},
 	addProcess: (req, res) => {
