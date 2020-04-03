@@ -6,7 +6,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <h2>Formulario de registro</h2>
-				<form method="POST" action="/user/registro" enctype="multipart/form-data">
+				<form method="POST" action="/user/registro" enctype="multipart/form-data" id="registerForm">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -14,6 +14,7 @@
 								<input 
 									type="text" 
 									name="fullName" 
+									data-name="nombre completo"
 									class="form-control
 									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
 										<%= hasErrorGetMessage('fullname', errors) ? 'is-invalid' : null %> 
@@ -21,19 +22,26 @@
 									"
 									value="<%= typeof oldData !== 'undefined' ? oldData.fullname : null %>"
 								>
+								<div class="invalid-feedback"> </div>
 								<i class="invalid-feedback">
 									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
 										<%= hasErrorGetMessage('fullname', errors) ? hasErrorGetMessage('fullname', errors) : null %>
 									<% } %>
 								</i>
+								
 							</div>
 						</div>
+
+				
+
 						<div class="col-md-6">
 							<div class="form-group">
 								<label><b>Correo electrónico:</b></label>
 								<input 
-									type="text" 
+ 
+									type="email"
 									name="email" 
+									data-name="correo electronico"
 									class="form-control
 									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
 										<%= hasErrorGetMessage('email', errors) ? 'is-invalid' : null %> 
@@ -54,6 +62,7 @@
 								<input 
 									type="password" 
 									name="password" 
+									data-name="contraseña"
 									class="form-control
 									<% if (typeof hasErrorGetMessage !== 'undefined') { %>
 										<%= hasErrorGetMessage('password', errors) ? 'is-invalid' : null %> 
@@ -73,6 +82,7 @@
 								<input 
 									type="password" 
 									name="rePassword" 
+									data-name="newcontraseña"
 									class="form-control"
 								>
 							</div>
@@ -83,6 +93,7 @@
 								<select 
 									name="categoria" 
 									class="form-control"
+									data-name="categoria"
 								>
 									<option value="">Elegí una categoria</option>
 									<%  
@@ -128,6 +139,7 @@
 							<div class="form-group">
 								<label><b>Direccion:</b></label><br> 
 								<input 
+								data-name="direccion"
 								type="text" 
 								name="direccion" 
 								>
@@ -140,6 +152,7 @@
 								<input 
 								type="text" 
 								name="ciudad" 
+								data-name="ciudad"
 								>
 							</div>
 						</div>
@@ -151,6 +164,7 @@
 								<input 
 								type="text" 
 								name="pais" 
+								data-name="pais"
 								>
 							</div>
 						</div>
@@ -171,6 +185,13 @@
   <script> src="js/bootstrap.js"</script>
   <script> src="js/jquery.js"</script>
   <script> src="js/popper.js"</script>
+  <script src="../js/validator.js"></script>
+  <script src="../js/validacionesRegistro.js"> </script>
+
+ 
+
+ 
+ 
 </body>
 
 </html>
