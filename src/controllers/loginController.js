@@ -58,6 +58,7 @@ const loginController = {
 			//if (req.body.user_password == userToLogin.password)
 			
 			{
+				
 				// Borramos la contraseña del objeto usuario
 				console.log(userToLogin);
 				delete userToLogin.password;

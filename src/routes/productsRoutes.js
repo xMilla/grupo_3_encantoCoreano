@@ -6,7 +6,7 @@ const path = require('path');
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
-
+const productValidations = require('../middlewares/productValidatorMiddleware');
 /***********************MULTER***************************/
 let diskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -46,7 +46,10 @@ router.get('/add/:idProducto', productsController.add);
 //router.post('/add', upload.single('foto'), productsController.addProcess);
 router.post('/add/:idProducto', productsController.addProcess);
  
-router.post('/add', productsController.addProcess);
+/* POST - /products/add */
+router.post('/add', upload.single('foto'), productValidations  ,  productsController.addProcess);
+
+
 /* GET - Producto-> /products/todosAdmin */
 router.get('/todosAdmin', productsController.todosAdmin);
 
@@ -57,7 +60,7 @@ router.delete('/borrar/:idProducto', productsController.borrar);
 router.get('/update/:idProducto', productsController.update);
 
 /* GET - Producto-> /products/update/id*/
-router.post('/edit/:idProducto', productsController.updateProcess);
+router.post('/edit/:idProducto',  upload.single('foto'), productValidations  , productsController.updateProcess);
 
 /* GET - Producto-> /products/detalle */
 router.get('/detalle', productsController.detail);

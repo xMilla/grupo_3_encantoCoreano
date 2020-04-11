@@ -49,7 +49,7 @@ const userController = {
 		Users
 		.create(req.body)
 		.then(users => {
-		
+		console.log("crear user");
 			// Setear en session el ID del usuario nuevo para auto loguearlo
 			req.session.userId = users.id;
 	
@@ -66,58 +66,98 @@ const userController = {
 		
 		
 	},
+
+
+
 	processLogin: (req, res) => {
-		// Busco al usuario por email
-		//let userToLogin = helperFunctions.getUserByEmail(req.body.email);
+	 
+		const hasErrorGetMessage = (field, errors) => {
+			for (let oneError of errors) {
+				if (oneError.param == field) {
+					return oneError.msg;
+				}
+			}
+			return false;
+		}
+				
+		let errorsResult = validationResult(req);
+	
 		
+		if ( !errorsResult.isEmpty() ) {
+	        return res.render('login', {
+				errors: errorsResult.array(),
+				hasErrorGetMessage,
+				oldData: req.body }); 
+			  
+			
+		} else {
 		Users
+
+		
 		.findAll(
 	       {
 			   where: {
-				   email: req.body.email
+				   email: req.body.email,
 			   }
 		   }
 		)
 		.then(users => {
 			// Valido si existe el usuario
-			 
+			console.log(req.body);
 		if(users.id !== null) {
-			//if (bcrypt.compareSync(req.body.password, users.password)) {
-				// Setear en session el ID del usuario
-				req.session.userId = users.id;
-
-				// Setear la cookie
-				if (req.body.remember) {
-					res.cookie('userCookie', users.id, { maxAge: 180000});
-				}
-
-				// Redireccionamos al visitante a su perfil
-		 	  
-				return res.render('userProfile', { 
+		
+			 
+				 return res.render('userProfile', { 
 					title: 'users  List',
 					'users' : users 
-				});
-				//res.send(req.session.userId );
-		//	} else {
-		//		res.send('Credenciales inválidas');
-		//	}
+				}); 
+		 
+	
 		} else {
 			res.send('No hay usuarios registrados con ese email');
 		}
 		
 			})
 
-			.catch(error => res.send(error)); 
+			.catch(error => res.send(' Error')); 
+		}
 		} ,
 	 
 
-		
-	 
+	
+	  
 	profile: (req, res) => {
-		//let userLogged =  helperFunctions.getUserById();
-		///ver esto  
-		res.render('login', { 'users':{} });
-	},
+		Users
+		.findAll(
+	       {
+			   where: {
+				   email: 'flor@gmail.com',
+			   }
+		   }
+		)
+		.then(users => {
+			// Valido si existe el usuario
+	 
+		if(users.id !== null) {
+		
+			 
+				 return res.render('userProfile', { 
+					title: 'users  List',
+					'users' : users 
+				}); 
+		 
+	
+		} else {
+			res.send('No hay usuarios registrados con ese email');
+		}
+		
+			})
+
+			.catch(error => res.send(' Error')); 
+	 
+	}, 
+
+
 	index: (req, res) => {
 		res.render('index', {
 			user: req.session.user

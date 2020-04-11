@@ -1,68 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="../../css/bootstrap-grid.css"> 
-    <link rel="stylesheet" href="../../css/app.css">
-
-    <title>EncantoCoreanoAdmin</title>
-</head>
-<body>
+ <div class="container-promo-envios col-12 row justify-content-center">ENVIOS GRATIS A PARTIR DE $1000</div>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="#"> </a>
+ 
+   <nav class="navbar navbar-light bg-light">
+     <a class="navbar-brand" href="#">
+       <img src="../../images/logonuevo.png"  width="80" height="50" alt="">
+     
+     </a>
+   </nav>
  
   
- <div class="container ppl">
-  <nav class="row nnavbar justify-content-center">  
+ 
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+ 
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+       </li>
       
-      <div class="col-12 col-md-4 col-lg-2 contenedor-img"> 
-         <a href="/"> <img class="logo" src="../../images/logo_V7_sm.png" alt="Logo"></a>
-      </div>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categoria de productos
+         </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+           <a class="dropdown-item" href="/products/beauty">K~BEAUTY</a>
+           <a class="dropdown-item" href="/products/food">K~FOOD</a>
+           <a class="dropdown-item" href="/products/music">K~MUSIC</a>
+           <a class="dropdown-item" href="/products/todos">TODOS</a>
+           <div class="dropdown-divider"></div>
+           <a class="dropdown-item" href="#"> </a>
+         </div>
+       </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Gestion de Ususarios
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/user/todosUserAdmin">Lista de usuarios</a>
+          
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#"> </a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Gestion de productos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/products/todosAdmin">Modificar / Borrar Productos</a>
+          <a class="dropdown-item" href="/products/add">Agregar Productos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#"> </a>
+        </div>
+      </li>
+
+     </form>
+  
+    
+     </ul>
+ 
+     <nav class="navbar navbar-light bg-light">
+       <a class="navbar-brand" href="/user/login">
+         <img src="../../images/circle-user.png" width="30" height="30" class="d-inline-block align-top" alt="">  </a>
+ 
+         <a class="navbar-brand" href= "/Carrito">
+         <img src="../../images/carrito.png" width="30" height="30" class="d-inline-block align-top" alt=""> </a>
+        
      
-      <div class="col-12 col-md-6 col-lg-7 contenedor-menu">
-        <div class="container">
-          <div class=" ">
-
-            <a class="col-6" href="/products/beauty">K~BEUTY</a>
-            <a class="col-6" href="/products/food">K~FOOD</a>
-            <a class="col-6" href="/products/music">K~MUSIC</a>
-            <a class="col-6" href="/products/todosAdmin">TODOS</a>  
-
-        
+     </nav>
       
-            <a class="col-6" href="/user/todosUserAdmin">Gestion Usuarios</a> 
-            <a class="col-6" href="/products/todosAdmin">Borrar Productos</a>  
-           
-
-            <a class="col-6" href="/products/add">Agregar Productos</a>  
-        
-          
-             
-       
-          
-
-          </div>
-         
-      </div>
-    </div>
-      <div class="col-12 col-md-12 col-lg-3 searchLogin">
-        
-        <div class="loginCarrito container">
-          <div class="login row justify-content-center ">
-            <div class="col-6"><h1 class="img-user">Admin</h1"></div>
-            <a class="col-6" href=""><img class="img-user" src="../../images/carrito.png" alt="carrito"></a> 
-          </div>
-        </div>
-
-        <div class="container search">
-          <form class="row justify-content-center txtbuscar">
-            <input class="col-lg-8" for="boton" class="" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="col-lg-3  button" type="submit" name="boton">Buscar</button>
-          </form>
-
-        </div>
-      </div>
-
-  </nav>
-</div>
+     <form class="form-inline my-2 my-lg-0">
+       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+   
+ 
+   </div>
+ </nav>

@@ -1,19 +1,47 @@
 const path = require('path');
+const db = require('../database/models/');
+const Users = db.users;
+
 const { check } = require('express-validator');
 
 module.exports = [
 	// validando campo nombre
-	check('fullName', 'El nombre es obligatorio').notEmpty(),
+	//Obligatorio y Deberá tener al menos 2 caracteres
+	check('fullName')
+	.notEmpty().withMessage('El nombre es obligatorio').bail()
+	.isLength({min: 2}).withMessage( 'El nombre debe tener al menos dos caracteres'),
+ 
 
 	// validando campo email
+	//Obligatorio, Deberá ser válido y No puede repetirse con los emails ya registrados
 	check('email')
-		.notEmpty().withMessage('El email es obligatorio').bail()
-		.isEmail().withMessage('Escribí un email válido'),
+	.notEmpty().withMessage('El email es obligatorio').bail()
+	.isEmail().withMessage('Escribí un email válido').bail()
+	.custom((value, { req }) => {
+			return Users
+			.findAll(
+				{
+					where: {
+						email: value
+					}
+				}
+			 )
+			.then(user => {
+				console.log(user.length);
+				if (user.length > 0 ){
+				   return Promise.reject("El mail ya esta registrado");  
+				}
+			 }) 
+	}),
+			 
+	 
 
-	// validando campo password
+// Obligatoria
+//Deberá tener al menos 8 caracteres
+//(Opcional) → Deberá tener letras mayúsculas, minúsculas, un número y un carácter especial
 	check('password')
 		.notEmpty().withMessage('Escribí una contraseña').bail()
-		.isLength({ min: 5 }).withMessage('La contraseña debe tener más de 5 letras'),
+		.isLength({ min: 8 }).withMessage('La contraseña debe tener más de 5 letras'),
 	
 		// validando campo avatar
 	check('avatar')

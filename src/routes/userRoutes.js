@@ -10,10 +10,10 @@ const userController = require('../controllers/userController');
 /***********************MULTER***************************/
 let diskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, path.join(__dirname, '../../public/images/k-music'));
+		cb(null, path.join(__dirname, '../../public/images/avatars'));
 	},
 	filename: function (req, file, cb) {
-		let finalName = '../../images/k-music/' + Date.now() + path.extname(file.originalname);
+		let finalName = '../../images/avatars/' + Date.now() + path.extname(file.originalname);
 		cb(null, finalName);
 	}
 });
@@ -22,24 +22,24 @@ let upload = multer({ storage: diskStorage })
 
 // ************ Middlewares ************
 
-const authMiddleware = require('../middlewares/authMiddleware');
-const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware      = require('../middlewares/authMiddleware');
+const guestMiddleware     = require('../middlewares/guestMiddleware');
 const registerValidations = require('../middlewares/registerValidatorMiddleware');
-
+const loginValidations     = require('../middlewares/loginValidatorMiddleware');
 
 /* GET - user/profile */
-router.get('/profile',authMiddleware,userController.profile);
+//router.get('/profile', userController.profile);
 router.get('/editUser/:id',userController.edit);
 router.post('/editUser/:id',userController.update);
 /* GET - user/login */
-router.get('/login', guestMiddleware, userController.login);
+router.get('/login',   userController.login);
 
 /*POST to /user/login */
-router.post('/login',userController.processLogin);
+router.post('/login',   loginValidations,  userController.processLogin  );
 
 /* GET - /user/registro */
 router.get('/registro',   userController.registro);
-router.get('/products/user/registro', guestMiddleware, userController.registro);
+//router.get('/products/user/registro', guestMiddleware, userController.registro);
 
 /* POST - user/registro*/ 
 router.post('/registro', upload.single('avatar'),registerValidations, userController.store);
@@ -51,3 +51,4 @@ router.get('/logout', userController.logout);
 // Eliminar - DELETE - destroy
 router.delete('/:id', userController.destroy);
 module.exports = router;
+

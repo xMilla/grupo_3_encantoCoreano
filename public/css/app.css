@@ -120,16 +120,16 @@ header{
  }
 
  .contenido{
-   width: 50%;
-   margin-left: 25%;
-   margin-top: 10%;
-   margin-bottom: 10%;
+   width: 80%;
+   margin: 5% 30% 40% 30%;
+
+ 
  }
 
 .ofertas{
-  margin-left: 20%;
+  text-align: center;
   color: yellowgreen;
-  font-size: 20px;
+  font-size: 10px;
 }
  
 .novedades{

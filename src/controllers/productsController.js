@@ -2,24 +2,13 @@ const db = require('../database/models/');
 const Products = db.products;
 const Categories = db.categories;
 const Brands = db.brands;
-;
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const helperFunctions = require('../functions/helpers');
+const { validationResult } = require('express-validator'); 
 
-
-/*let diskStorage = multer.diskStorage({
-	destination: function (req, file, cb) {
-		cb(null, path.join(__dirname, '../../public/images/k-music'));
-	},
-	filename: function (req, file, cb) {
-		let finalName = '../../images/k-music/' + Date.now() + path.extname(file.originalname);
-		cb(null, finalName);
-	}
-});
-
-let upload = multer({ storage: diskStorage })*/
+ 
 
 
 let productsData = helperFunctions.getAll('todos');
@@ -68,8 +57,12 @@ const productAddController = {
 	music: (req, res) => {
 		res.render('music',{'productos':musicData});
 	},
+
+
 	add: (req, res) => {
 
+
+	
 		let brands = Brands.findAll();
 		let categories = Categories.findAll();
 
@@ -85,6 +78,7 @@ const productAddController = {
 			.catch(error => res.send(error));
 
 		return;
+	 
 	},
 	update: (req, res) => {
 		let brands = Brands.findAll();
@@ -103,11 +97,57 @@ const productAddController = {
 			.catch(error => res.send(error));
 	},
 	updateProcess: (req, res) => {
-		// Asignar el nombre final de la imagen
+		 
+		const hasErrorGetMessage = (field, errors) => {
+			for (let oneError of errors) {
+				if (oneError.param == field) {
+					return oneError.msg;
+				}
+			}
+			return false;
+		}
+				
+		let errorsResult = validationResult(req);
+         console.log('hola');
+		console.log(errorsResult );
+	 
+
+		if ( !errorsResult.isEmpty() ) {
+
+			
 	 
 		Products
+		.findByPk(req.params.idProducto)
+		.then( product => {
+			return res.render('ProductUpdate', { 
+				'product' : product,
+				errors: errorsResult.array(),
+				hasErrorGetMessage,
+				oldData: req.body
+
+			});
+		})
+		.catch(error => res.send(error));
+			
+
+		
+
+		} else {
+
+					// Asignar el nombre final de la imagen
+		req.body.foto = req.file.filename;
+
+		Products
 		.update({
-			nombre_product: req.body.nombre_product},
+			nombre_product: req.body.nombre_product,
+			descripcion_larga:	req.body.descripcion_larga,
+			descripcion:	req.body.descripcion,
+			tamaño:	req.body.tamaño,
+			precio:	req.body.precio,
+			stock:	req.body.stock,
+			foto:	req.body.foto
+		
+		},
 			
 			{
 
@@ -128,10 +168,47 @@ const productAddController = {
 		)
 		.catch(error => res.send(error));
 		
-	
+	}
 
 	},
 	addProcess: (req, res) => {
+
+		const hasErrorGetMessage = (field, errors) => {
+			for (let oneError of errors) {
+				if (oneError.param == field) {
+					return oneError.msg;
+				}
+			}
+			return false;
+		}
+				
+		let errorsResult = validationResult(req);
+         console.log('hola');
+		console.log(errorsResult );
+	 
+
+		if ( !errorsResult.isEmpty() ) {
+
+			
+		let brands = Brands.findAll();
+		let categories = Categories.findAll();
+		Promise
+			.all([brands, categories])
+			.then(results => {
+				return res.render('productAdd', {
+					brands: results[0],
+					categories: results[1],
+					errors: errorsResult.array(),
+					hasErrorGetMessage,
+					oldData: req.body
+				});
+			})
+			.catch(error => res.send(error));
+			
+
+		
+
+		} else {
 		Products
 		.create(req.body)
 		.then(product => {
@@ -140,6 +217,8 @@ const productAddController = {
 			return res.redirect('/products/todosAdmin');
 		})
 		.catch(error => res.send(error));
+
+	}
 	},
 	borrar: function (req, res){
 		

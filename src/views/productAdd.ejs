@@ -1,75 +1,188 @@
 <%- include('partials/head')%>
 <%- include('partials/menuAdmin')%>
 
-<div class="cuerpoProductAdd container">
-  <div>
-    <form  class="row justify-content-around"  enctype="multipart/form-data" 
-    action="/products/add/" method="POST" id="productoForm">
-      <div class="col-5">
-        
-        <label for="nombre_product">Nombre</label>
-        <input class="abajo form-control" type="text" name="nombre_product"   data-name="nombre producto">
-         <div class="invalid-feedback"> </div>
+ 
+<div class="container" style="margin-top:30px; margin-bottom: 30px;">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <form method="POST" action="/products/add/" enctype="multipart/form-data"  id="productoForm"> 
+    
+					<div class="row">
 
+            <div class="col-md-6">
+							<div class="form-group">
+								<label><b>Categorias </b></label>
+							  <select name="categories" >
+                  <option value="">Elegí varias categorías</option>
+                  <% categories.forEach(oneCategory => { %>
+                  <option value="<%= oneCategory.id %>"><%= oneCategory.nombre %></option>
+                  <% }) %>
+                </select>
+							</div>
+            </div>
+            <div class="col-md-6">
+							<div class="form-group">
+								<label><b>Marca</b></label>
+							  <select name="brandId">
+                  <option value="">Elegí una marca</option>
+                  <% brands.forEach(oneBrand => { %>
+                  <option value="<%= oneBrand.id %>"><%= oneBrand.tipo %></option>
+                  <% }) %>
+                </select>
+							</div>
+            </div>
 
-        <label for="categories">Tipo</label><br>
-        <select name="categories" >
-          <option value="">Elegí varias categorías</option>
-          <% categories.forEach(oneCategory => { %>
-          <option value="<%= oneCategory.id %>"><%= oneCategory.nombre %></option>
-          <% }) %>
-        </select><br>
-        <label for="brandId">Marca</label><br>
-        <select name="brandId">
-          <option value="">Elegí una marca</option>
-          <% brands.forEach(oneBrand => { %>
-          <option value="<%= oneBrand.id %>"><%= oneBrand.tipo %></option>
-          <% }) %>
-        </select><br>
-        <label for="tamaño">Tamaño/Talle</label>
-        <input class="abajo" type="text" name="tamaño">
-        <label for="color">Color</label>
-        <input class="abajo" type="text" name="color">
-        <label for="precio">Precio</label>
-        <input class="abajo" type="text" name="precio">
-        <label for="stock">Stock</label>
-        <input class="abajo" type="text" name="stock">
-        <label for="descripcion">Descripción Corta</label>
-        <input class="abajo" type="txt" name="descripcion">
-      </div>
-      <div class="col-6 row cargaBotones justify-content-around">
-        <div class="col-6">
-          <label  for="descripcion_larga">Descripción Larga</label>
-          <input  
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Nombre:</b></label>
+                <input   type="text" name="nombre_product"   data-name="nombre producto" 
+                class="form-control
+                          <% if (typeof hasErrorGetMessage !== 'undefined') { %>
+                            <%= hasErrorGetMessage('nombre_product', errors) ? 'is-invalid' : null %> 
+                          <% } %>
+                          "
+                          value="<%= typeof oldData !== 'undefined' ? oldData.nombre_product : null %>"	>
+                 <div class="invalid-feedback"> </div>
+                 <i class="invalid-feedback">
+                  <% if (typeof hasErrorGetMessage !== 'undefined') { %>
+                    <%= hasErrorGetMessage('nombre_product', errors) ? hasErrorGetMessage('nombre_product', errors) : null %>
+                  <% } %>
+                </i>
+								
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Imagen de perfil:</b></label>
+								<div class="custom-file">
+									<input 
+										type="file" 
+                    name="foto"
+                    data-name="foto" 
+										class="custom-file-input
+										<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+											<%= hasErrorGetMessage('foto', errors) ? 'is-invalid' : null %> 
+										<% } %>
+										"
+									>
+									<label class="custom-file-label">Choose file...</label>
+									<i class="invalid-feedback">
+										<% if (typeof hasErrorGetMessage !== 'undefined') { %>
+										<%= hasErrorGetMessage('foto', errors) ? hasErrorGetMessage('foto', errors) : null %>
+										<% } %>
+									</i>
+								</div>
+							</div>
+						</div>
+
+  
+            
+            <div class="col-md-6">
+							<div class="form-group">
+								<label><b>Descripcion</b></label><br> 
+								<input 
+								data-name="descripcion"
+								type="text" 
+                name="descripcion"
+                value="<%= typeof oldData !== 'undefined' ? oldData.descripcion : null %>"	>
+							 
+							</div>
+            </div>
+
+                    
+            <div class="col-md-6">
+							<div class="form-group">
+								<label><b>Descripcion Larga</b></label><br> 
+							  <input  
           type="text" 
           name="descripcion_larga"
-          data-name="nombre largo"
-          class="form-control"
-          >
+          data-name="Descripcion Larga"
+          class="form-control
+          <% if (typeof hasErrorGetMessage !== 'undefined') { %>
+            <%= hasErrorGetMessage('descripcion_larga', errors) ? 'is-invalid' : null %> 
+          <% } %>
+          "
+          value="<%= typeof oldData !== 'undefined' ? oldData.descripcion_larga : null %>"	>
           <div class="invalid-feedback"> </div>
-        </div>
-      
+          <i class="invalid-feedback">
+            <% if (typeof hasErrorGetMessage !== 'undefined') { %>
+              <%= hasErrorGetMessage('descripcion_larga', errors) ? hasErrorGetMessage('descripcion_larga', errors) : null %>
+            <% } %>
+          </i>
+							</div>
+            </div>
 
 
+            
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Tamaño/Talle</b></label><br> 
+								<input 
+								data-name="tamaño"
+								type="text" 
+                name="tamaño"
+                value="<%= typeof oldData !== 'undefined' ? oldData.tamaño : null %>"	>
+							 
+							</div>
+						</div>
 
-        <div class="col-6">
-          <label  for="foto">Cargar Foto</label>
-          <input  type="file" name="foto">
-          <div class="invalid-feedback"> </div>
-        </div>
-     
-        <input class="col-3 botoncito" type="submit" value="Agregar">
-        <input class="col-3 botoncito" type="submit" value="Actualizar">
-        <input class="col-3 botoncito" type="reset" value="Borrar">
-        <input class="col-4 botoncito" type="button" value="Cancelar">
-      </div>
-    </form>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Color:</b></label><br> 
+								<input 
+								type="text" 
+								name="color" 
+                data-name="color"
+                value="<%= typeof oldData !== 'undefined' ? oldData.color : null %>"	>
+							 
+							</div>
+						</div>
+
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Precio:</b></label><br> 
+								<input 
+								type="text" 
+								name="precio" 
+                data-name="precio"
+                value="<%= typeof oldData !== 'undefined' ? oldData.precio : null %>"	>
+							 
+							</div>
+						</div>
+
+            <div class="col-md-6">
+							<div class="form-group">
+								<label><b>Stock:</b></label><br> 
+								<input 
+								type="text" 
+								name="stock" 
+                data-name="stock"
+                value="<%= typeof oldData !== 'undefined' ? oldData.stock : null %>"	>
+							 
+							</div>
+						</div>
+
+						<div class="col-8">
+              <button type="submit" class="btn btn-primary"  > Agregar</button>
+            </div>
+            
+ 
+
+					</div>
+				</form>
+ 
+    	</div>
+    </div>
   </div>
-</div>
 
 
 
   <%- include('partials/footer')%>
+  <script> src="js/bootstrap.js"</script>
+  <script> src="js/jquery.js"</script>
+  <script> src="js/popper.js"</script>
   <script src="../js/validator.js"></script>
-  <script src="../js/validacionesProducto.js"> </script>
+
 

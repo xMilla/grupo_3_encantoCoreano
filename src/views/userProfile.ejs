@@ -1,22 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Profile</title>
-</head>
-<body>
-	
-	<%- include('partials/head')%>
-	<%- include('partials/menuAdmin')%>
-	
-	<p>Hola <%= users.fullName %></p>
-	<p>Email: <%= users.email %></p>
-	<div>
-		<img class="imgAvatar" src="/images/avatars/<%= users.avatar %>" alt="avatar">
+<%- include('partials/head')%>
+<%- include('partials/menuAdmin')%>
+
+
+<div class="container" style="margin-top:30px; margin-bottom: 30px;">
+	<div class="row justify-content-center">
+	  <div class="col-md-10">
+		 <div class="row">	
+			<% users.forEach(function (user) { %> 
+				<div class="col-md-12">
+					<div class="form-group">
+						<img class="imgAvatar" src="/images/avatars/<%= user.avatar %>" alt="avatar">
+						<label><b>Bienvenido <%= user.fullName %></b></label>
+					    
+					    
+					</div>
+				</div>
+				 
+			 
+				<div class="col-md-12">
+					<div class="form-group">
+					 
+						<label><b> Datos</b></label>
+					    <label><b> Mail: <%= user.email %></b></label>
+						 
+					</div>
+				</div> 
+
+				<div class="col-md-12">
+					<div class="form-group">
+					 
+					 
+						<label><b> Ciudad: <%= user.ciudad %></b></label>
+					</div>
+				</div> 
+
+				<div class="col-md-12">
+					<div class="form-group">
+					 
+						 
+						<label><b> Ciudad: <%= user.ciudad %></b></label>
+					</div>
+				</div> 
+
+
+				<% }) %>
+			</div>
+			 
+ 
+			</div>
+   
+		 
+   
+		  </div>
+	  </div>
 	</div>
-	
-	<br>
-	<a href="/user/logout">SALIR</a>
+  
+    <%- include('partials/footer') %>
+  <script> src="js/bootstrap.js"</script>
+  <script> src="js/jquery.js"</script>
+  <script> src="js/popper.js"</script>
+  <script src="../js/validator.js"></script>
+  <script src="../js/validacionesLogin.js"> </script>
+
 </body>
+
 </html>
+
