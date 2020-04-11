@@ -43,7 +43,8 @@ const productAddController = {
 			include: ["products"]
 		})
 		.then(result => {	
-		   return	res.render(req.params.cat,{'productos': result  });
+			console.log( result[0].products );
+		   return	res.render(req.params.cat,{'productos': result[0].products  });
 		})
 
 		.catch(error => res.send(error)); 
@@ -209,10 +210,16 @@ const productAddController = {
 		
 
 		} else {
+
+			req.body.foto = req.file.filename;
+
 		Products
+
+		
 		.create(req.body)
 		.then(product => {
 			// insertar en la pivot
+			
 			product.addCategories(req.body.categories);
 			return res.redirect('/products/todosAdmin');
 		})
