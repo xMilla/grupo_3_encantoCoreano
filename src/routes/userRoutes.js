@@ -26,11 +26,14 @@ const authMiddleware      = require('../middlewares/authMiddleware');
 const guestMiddleware     = require('../middlewares/guestMiddleware');
 const registerValidations = require('../middlewares/registerValidatorMiddleware');
 const loginValidations     = require('../middlewares/loginValidatorMiddleware');
-
+const userValidations     = require('../middlewares/userEditValidatorMiddleware');
 /* GET - user/profile */
-//router.get('/profile', userController.profile);
+router.get('/profile',authMiddleware , userController.profile);
 router.get('/editUser/:id',userController.edit);
-router.post('/editUser/:id',userController.update);
+
+ 
+router.post('/editUser/:id', upload.single('avatar') , userValidations ,userController.update);
+
 /* GET - user/login */
 router.get('/login',   userController.login);
 
@@ -38,7 +41,7 @@ router.get('/login',   userController.login);
 router.post('/login',   loginValidations,  userController.processLogin  );
 
 /* GET - /user/registro */
-router.get('/registro',   userController.registro);
+router.get('/registro',  userController.registro);
 //router.get('/products/user/registro', guestMiddleware, userController.registro);
 
 /* POST - user/registro*/ 

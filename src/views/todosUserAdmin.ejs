@@ -4,7 +4,7 @@
 	<!-- todos los usuarios -->
 	<div >
 		<h2 class="row justify-content-center  " >Gestion de usuarios</h2>
-		<h2 ></h5><a class="col-6" href="registro">Agregar Usuario</a>  </h2>
+		 
 	  </div>
 	  <div class="container">
 		<div class="row text-center">
@@ -12,36 +12,36 @@
 		  <div class="col-sm-3 card mb-3 box-shadow">
 			<div class="card-header">
 			  <h4 class="my-0 font-weight-normal"><%= user.fullName %></h4>
+			  <a href="editUser/<%= user.id%>">
+				<h5 class= 'text-danger'>Editar Usuario </h5> 
+				</a>
 			</div>
 			<div class="card-body">
-			
-			  <h1 class="card-title pricing-card-title"> $<%= user.email %> <small class="text-muted"></small></h1>
+
+				<div class="row justify-content-center col-md-12">
+					
+					
+					</div>
+			  <h5 class=" "> <%= user.email %> 
+				<small class="text-muted"></small></h5>
 			  <ul class="list-unstyled mt-3 mb-4 listaprod">
-				<li><a href="detalle/<%= user.id%>">
+				<li>
 					<img   src="<%= user.avatar %>" alt="Avatar" class="imgProducts"></li>
-				</a>
+				
 				<br>
                 <div class="container">
 					<div class="row justify-content-center botoncitos_update">
 					 
-						<hr>
+					 
 					<form action="/user/<%= user.id %>?_method=DELETE" method="POST">
-					<h6>¿Querés eliminar este User?</h6>
+				
 						<button type="submit">Borrar User</button>
 					</form>
-					<ul class="list-unstyled mt-3 mb-4 listaprod">
-						<li>
-                         
-						</li>
-						<li><a href="editUser/<%= user.id%>">
-							 Editar Usuario-
-							</a>
-						</li>
-						
-							
-						 
-					  </ul>
 				 
+				
+					</div>
+
+				
 					</div>
 				</div>
 			  </ul>	  

@@ -69,5 +69,5 @@ router.get('/detalle', productsController.detail);
 router.get('/detalle/:idProducto', productsController.detail);
 router.get('/:cat', productsController.byCategory);
 
-
+router.post('/search', productsController.search);
 module.exports = router;

@@ -51,9 +51,39 @@ const productAddController = {
 			 
 		 
 	},
+
+	search: (req, res) => {
+	 
+		 console.log(req.body.busquedacat)
+		Categories.findAll({
+			where:{
+				nombre: req.body.busquedacat
+			},
+			include: ["products"]
+		})
+		.then(result => {	
+			console.log( result[0].products );
+		   return	res.render(req.body.busquedacat,{'productos': result[0].products  });
+		})
+
+		.catch(error => res.send(error)); 
+			 
+		 
+	},
 	beauty: (req, res) => {
 		
-		res.render('beauty',{'productos': beautyData  });
+		res.render('beauty',
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{'productos': beautyData  });
 	},
 	music: (req, res) => {
 		res.render('music',{'productos':musicData});
@@ -73,7 +103,8 @@ const productAddController = {
 				res.render('productAdd', {
 					title: 'Product Cate',
 					brands: results[0],
-					categories: results[1]
+					categories: results[1],
+					'avatar' : req.session.avatar
 				});
 			})
 			.catch(error => res.send(error));
@@ -91,7 +122,8 @@ const productAddController = {
 				return res.render('ProductUpdate', { 
 					'product' : product,
 					'brands' : brands,
-					'categories' : categories 
+					'categories' : categories ,
+					'avatar' : req.session.avatar
 
 				});
 			})
@@ -124,7 +156,8 @@ const productAddController = {
 				'product' : product,
 				errors: errorsResult.array(),
 				hasErrorGetMessage,
-				oldData: req.body
+				oldData: req.body,
+				'avatar' : req.session.avatar
 
 			});
 		})
@@ -201,7 +234,8 @@ const productAddController = {
 					categories: results[1],
 					errors: errorsResult.array(),
 					hasErrorGetMessage,
-					oldData: req.body
+					oldData: req.body,
+					'avatar' : req.session.avatar
 				});
 			})
 			.catch(error => res.send(error));
@@ -239,7 +273,6 @@ const productAddController = {
 				product.removeCategories(product.categories);
 				product.destroy();
 				return res.redirect('/products/todosAdmin');
-				
 			})
 			.catch(error => res.send(error));
 	},
@@ -251,7 +284,8 @@ const productAddController = {
 				
 				return res.render('todosAdmin', { 
 					title: 'Products List',
-					'productos' : products
+					'productos' : products,
+					'avatar' : req.session.avatar
 				});
 			})
 			.catch(error => res.send(error));

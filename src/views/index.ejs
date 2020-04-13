@@ -1,6 +1,11 @@
 <%- include('partials/head')%>
-<%- include('partials/menu')%>
 
+
+ <% if (avatar == undefined) { %>
+     <%- include('partials/menu')%>
+  <% }else{%>
+    <%- include('partials/menuAdmin')%>
+  <% } %>
 
  <div class="contenido" >
  

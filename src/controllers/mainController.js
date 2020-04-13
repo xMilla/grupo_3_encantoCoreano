@@ -9,7 +9,11 @@ let productsData = helperFunctions.getAll('todos');
 
 const controller = {
 	root: (req, res) => {
-		res.render('index',{'productos':productsData});
+		res.render('index',{
+			
+	    'productos':productsData,
+		'avatar' : req.session.avatar
+	});
 	},
 	carrito: (req, res) => {
 		res.render('Carrito');
@@ -17,6 +21,8 @@ const controller = {
 	metodoDePago:(req, res) => {
 		res.render('MetodoPago');
 	},
+
+
 	
 };
 

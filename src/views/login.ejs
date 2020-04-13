@@ -5,6 +5,9 @@
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
 	<div class="row justify-content-center">
 	  <div class="col-md-10">
+		<a  href="/user/registro" role="button" data-slide="next">
+			Registrarme<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		</a>
 		<form method="POST" action="/user/login"  id="loginForm"> 
 	  
 			<div class="row">
@@ -52,18 +55,15 @@
 				</div>
 
 
-			
-			
-
-
-
-			
 				<div class="col-8">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+					</label>
+					</div>
+					
+				<div class="col-8">	 
 					<button type="submit" class="btn btn-primary"  > login</button>
 				  </div>
-
-				 
-			 
 			</div>
    
 		 </form>

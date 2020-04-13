@@ -43,8 +43,7 @@ const userController = {
 		// Asignar el nombre final de la imagen
 		req.body.avatar = req.file.filename;
 
-		// Guardar al usario y como la función retorna la data del usuario lo almacenamos en ela variable "user"
-		//let user = helperFunctions.storeUser(req.body);
+	 
 
 		Users
 		.create(req.body)
@@ -88,74 +87,73 @@ const userController = {
 				errors: errorsResult.array(),
 				hasErrorGetMessage,
 				oldData: req.body }); 
-			  
-			
-		} else {
-		Users
 
-		
-		.findAll(
-	       {
-			   where: {
-				   email: req.body.email,
+		} else {
+			Users
+			.findAll(
+			   {
+				   where: {
+					   email: req.body.email,
+				   }
 			   }
-		   }
-		)
-		.then(users => {
-			// Valido si existe el usuario
-			console.log(req.body);
-		if(users.id !== null) {
-		
-			 
-				 return res.render('userProfile', { 
-					title: 'users  List',
-					'users' : users 
-				}); 
-		 
-	
-		} else {
-			res.send('No hay usuarios registrados con ese email');
-		}
-		
-			})
+			)
+			.then(users => {
+				console.log(req.body.email)
+				// Si encontramos al usuario
+				if (users != undefined) {
+                  let user  = users[0];
+					// Al ya tener al usuario, comparamos las contraseñas
+					if (bcrypt.compareSync(req.body.password, user.password)) {
+						// Setear en session el ID del usuario
+						console.log('Credenciales válidas' )		
+						req.session.userId = user.id;
+						req.session.avatar= user.avatar;
+						// Setear la cookie
+						if (req.body.remember_user) {
+							res.cookie('userCookie', user.id, { maxAge: 60000 * 60 });
+						}
+						// Redireccionamos al visitante a su perfil	
+						console.log(user )					
+						return res.render('userProfile', { 
+							title: 'users  List',
+							'users' : users ,
+							'avatar' : req.session.avatar
+						}); 
+						} else {
+							res.send('Credenciales inválidas');
+						}
 
-			.catch(error => res.send(' Error')); 
+						} else {
+							res.send('No hay usuarios registrados con ese email');
+						}
+			  })
+			 .catch(error => res.send(error));
 		}
-		} ,
+    } ,
 	 
-
 	
-	  
-	profile: (req, res) => {
-		Users
-		.findAll(
-	       {
-			   where: {
-				   email: 'flor@gmail.com',
+		profile: (req, res) => {
+		 
+			Users
+			.findAll(
+			   {
+				   where: {
+					   email: req.session.userId,
+				   }
 			   }
-		   }
-		)
-		.then(users => {
-			// Valido si existe el usuario
-	 
-		if(users.id !== null) {
-		
-			 
-				 return res.render('userProfile', { 
-					title: 'users  List',
-					'users' : users 
-				}); 
-		 
+			)
+			.then(users => {
+				// Redireccionamos al visitante a su perfil						
+						return res.render('userProfile', { 
+							title: 'users  List',
+							'users' : users ,
+						    'avatar' : req.session.avatar
+						}); 
+						
+			   })
+			   .catch(error => res.send(error));
 	
-		} else {
-			res.send('No hay usuarios registrados con ese email');
-		}
-		
-			})
-
-			.catch(error => res.send(' Error')); 
-	 
-	}, 
+		},
 
 
 	index: (req, res) => {
@@ -179,7 +177,10 @@ const userController = {
 			
 			return res.render('todosUserAdmin', { 
 				title: 'users  List',
-				'users' : users 
+				'users' : users ,
+				'avatar' : req.session.avatar
+				
+
 			});
 		})
 		.catch(error => res.send(error));
@@ -209,7 +210,8 @@ const userController = {
 			.then(user => {
 				return res.render('editUser', { 
 					title: 'users  List',
-					'user' : user
+					'user' : user,
+					'avatar' : req.session.avatar
 				});
 				 
 			 
@@ -217,6 +219,36 @@ const userController = {
 			.catch(error => res.send(error));
 	},
 update:(req, res) => {
+
+	const hasErrorGetMessage = (field, errors) => {
+		for (let oneError of errors) {
+			if (oneError.param == field) {
+				return oneError.msg;
+			}
+		}
+		return false;
+	}
+			
+	let errorsResult = validationResult(req);
+   let ruta = "/editUser/" +   req.params.id  ;
+	if ( !errorsResult.isEmpty() ) {
+		return res.render( 'editUser' ,  {
+			errors: errorsResult.array(),
+			hasErrorGetMessage,
+			oldData: req.body,
+			user : req.body,
+			avatar : req.session.avatar
+		});
+	} else {
+		// Hash del password
+	req.body.password = bcrypt.hashSync(req.body.password, 10);
+
+	// Eliminar la propiedad re_password
+	delete req.body.re_password;
+
+	// Asignar el nombre final de la imagen
+	req.body.avatar = req.file.filename;
+  
 	Users
 		.update(req.body,
 			{
@@ -239,7 +271,7 @@ update:(req, res) => {
 		.catch(error => res.send(error));
       
 		}
-		
+	}
 };
 
 module.exports = userController

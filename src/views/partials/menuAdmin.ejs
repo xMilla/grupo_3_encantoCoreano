@@ -22,19 +22,7 @@
          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
        </li>
       
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categoria de productos
-         </a>
-         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-           <a class="dropdown-item" href="/products/beauty">K~BEAUTY</a>
-           <a class="dropdown-item" href="/products/food">K~FOOD</a>
-           <a class="dropdown-item" href="/products/music">K~MUSIC</a>
-           <a class="dropdown-item" href="/products/todos">TODOS</a>
-           <div class="dropdown-divider"></div>
-           <a class="dropdown-item" href="#"> </a>
-         </div>
-       </li>
+     
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Gestion de Ususarios
@@ -65,8 +53,13 @@
      </ul>
  
      <nav class="navbar navbar-light bg-light">
+
+      <a class="navbar-brand" href="/user/logout">
+        <img src="" width="30" height="30" class="d-inline-block align-top" alt=""> logout </a>
+
+
        <a class="navbar-brand" href="/user/login">
-         <img src="../../images/circle-user.png" width="30" height="30" class="d-inline-block align-top" alt="">  </a>
+         <img src="/images/avatars/<%= avatar %>" width="30" height="30" class="d-inline-block align-top" alt="">  </a>
  
          <a class="navbar-brand" href= "/Carrito">
          <img src="../../images/carrito.png" width="30" height="30" class="d-inline-block align-top" alt=""> </a>

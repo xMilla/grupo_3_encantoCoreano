@@ -5,8 +5,8 @@
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
   <div class="row justify-content-center">
     <div class="col-md-10">
-      <h2>Formulario de registro</h2>
-				<form method="POST" action="/user/editUser/<%= user.id%>"  >
+      <h2>Formulario Modificacion Usuario</h2>
+				<form method="POST" action="/user/editUser/<%= user.id%>"  enctype="multipart/form-data"   id="registerForm">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -179,6 +179,8 @@
   <script> src="js/bootstrap.js"</script>
   <script> src="js/jquery.js"</script>
   <script> src="js/popper.js"</script>
+  <script src="../../js/validator.js"></script>
+  <script src="../../js/validacionesUpdateUsuario.js"> </script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@ router.get('/', mainController.root);
 router.get('/carrito',mainController.carrito);
 router.get('/metodoDePago',mainController.metodoDePago);
  
-
+ 
 
 
 module.exports = router;
